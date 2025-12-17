@@ -24,6 +24,7 @@ Formal languages offer what I call **rigorous verifiability**—the ability to a
 3.  Compositional Generalization: Investigating how models can learn to systematically combine existing skills to generalize and solve complex, unseen tasks.
 
 # Preprints
+*(\* denotes equal contribution)*
 
 1.  **Re:Form—Reducing Human Priors in Scalable Formal Software Verification with RL in LLMs** <br>
     Chuanhao Yan\*, Fengdi Che\*, **Xuhan Huang**\*, Xu Xu\*, Xin Li\*, Yizhi Li\*, Xingwei Qu\*, Jingzhe Shi, Chenghua Lin, Yaodong Yang, Binhang Yuan, Hang Zhao, Yu Qiao, Bowen Zhou, Jie Fu. <br>
@@ -54,7 +55,6 @@ Formal languages offer what I call **rigorous verifiability**—the ability to a
     *Findings of the Association for Computational Linguistics (NAACL)*, 2025. [[paper](https://aclanthology.org/2025.findings-naacl.146.pdf)] [[code](https://github.com/FreedomIntelligence/Mamo)]
 
 <br>
-*Denotes equal contribution.
 
 # Beyond Research
 
