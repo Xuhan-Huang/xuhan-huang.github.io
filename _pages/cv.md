@@ -80,4 +80,4 @@ You can view my [full CV](../files/Xuhan_Huang_CV_20251218.pdf) for more details
 **Work:** Delivered technical lectures for undergraduate students on advanced topics:
 
 *   **Reinforcement Learning (2025):** Covered PPO derivation and the `veRL` training framework.
-*   **Real Analysis (2023):** Covered continuity, limits, and differentiation in Euclidean space ($\mathbb{R}^N$).
+*   **Real Analysis (2023):** Covered continuity, limits, and differentiation in Euclidean space (\(\mathbb{R}^N\)).
