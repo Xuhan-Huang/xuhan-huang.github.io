@@ -78,7 +78,7 @@ author:
   xing             : # Username
   youtube          : # Username
   zhihu            : # Username
-  cv               : "https://xuhan-huang.github.io/files/Xuhan_Huang_CV_20251218.pdf"
+  cv               : "/files/Xuhan_Huang_CV_20251218.pdf"
 
 # Publication Category - The following the list of publication categories and their headings
 publication_category:
