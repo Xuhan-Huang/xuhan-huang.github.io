@@ -248,7 +248,10 @@
   }
 
   a {
-    display: block;
+    // display: block;
+    display: inline-block;
+    width: auto;
+    // newly added
     margin-bottom: 5px;
     padding-right: 5px;
     padding-top: 2px;
