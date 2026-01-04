@@ -21,7 +21,7 @@ Formal languages offer what I call **rigorous verifiability**—the ability to a
 ### Research Interests
 1.  Scalable Formal Reasoning: Harnessing the perfect, self-contained signals within formal languages to train powerful and reliable AI agents.
 2.  AI Safety via Formal Methods: Using rigorous verification to guarantee that autonomous systems operate transparently and without unintended behaviors, ensuring they align perfectly with user intentions.
-3.  Compositional Generalization: Investigating how models can learn to systematically combine existing skills to generalize and solve complex, unseen tasks.
+3.  Compositional Generalization: Investigating how models can learn to systematically combine existing skills to generalize and solve complex, unseen tasks, for which I believe formal language reasoning is the ideal test bed.
 
 # Preprints
 *(\* denotes equal contribution)*
