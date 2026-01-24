@@ -8,7 +8,7 @@ redirect_from:
 ---
 # About Me
 
-Hello! I'm Xuhan Huang, a senior mathematics student at The Chinese University of Hong Kong, Shenzhen, where I am fortunate to be advised by Prof. [Benyou Wang](https://wabyking.github.io/old.html) and Prof. [Zhongxiang Dai](https://daizhongxiang.github.io/). Currently, I am a research intern at Shanghai AI Lab, mentored by Prof. [Jie Fu](https://bigaidream.github.io/).
+Hello! I'm Xuhan Huang, a senior mathematics student at The Chinese University of Hong Kong, Shenzhen, where I am fortunate to be advised by Prof. [Benyou Wang](https://wabyking.github.io/old.html) and Prof. [Zhongxiang Dai](https://daizhongxiang.github.io/). Currently, I am mentored by Prof. [Jie Fu](https://bigaidream.github.io/).
 
 My research goal is to build verifiably safe and aligned AI. I believe that the path to trustworthy artificial intelligence lies in moving from today's empirical, feedback-based systems to a new paradigm grounded in the mathematical certainty of formal languages.
 
