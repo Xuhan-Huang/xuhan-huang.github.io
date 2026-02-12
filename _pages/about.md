@@ -34,11 +34,7 @@ Formal languages offer what I call **rigorous verifiability**—the ability to a
     Sitao Cheng\*, Tianle Li\*, **Xuhan Huang**\*, Xunjian Yin, Difan Zou. <br>
     *Preprint*, 2025. [[paper](https://arxiv.org/abs/2512.13399)] [[code](https://github.com/sitaocheng/DERL)]
 
-3.  **VeriEquivBench: An Equivalence Score for Ground-Truth-Free Evaluation of Formally Verifiable Code** <br>
-    Lingfei Zeng\*, Fengdi Che\*, **Xuhan Huang**, Fei Ye, Xu Xu, Binhang Yuan, Jie Fu. <br>
-    *Preprint*, 2025. [[paper](https://arxiv.org/abs/2510.06296)] [[code](https://github.com/PunyGoood/VeriEquivBench)]
-
-4.  **CALM Before the STORM: Unlocking Native Reasoning for Optimization Modeling** <br>
+3.  **CALM Before the STORM: Unlocking Native Reasoning for Optimization Modeling** <br>
     Zhengyang Tang\*, Zihan Ye\*, Chenyu Huang\*, **Xuhan Huang**, Chengpeng Li, Sihang Li, Guanhua Chen, Ming Yan, Zizhuo Wang, Hongyuan Zha, Dayiheng Liu, Benyou Wang. <br>
     *Preprint*, 2025. [[paper](https://arxiv.org/abs/2510.04204)]
 
@@ -53,6 +49,10 @@ Formal languages offer what I call **rigorous verifiability**—the ability to a
 2.  **LLMs for Mathematical Modeling: Towards Bridging the Gap between Natural and Mathematical Languages** <br>
     **Xuhan Huang**, Qingning Shen, Yan Hu, Anningzhe Gao, Benyou Wang. <br>
     *Findings of the Association for Computational Linguistics (NAACL)*, 2025. [[paper](https://aclanthology.org/2025.findings-naacl.146.pdf)] [[code](https://github.com/FreedomIntelligence/Mamo)]
+
+3.  **VeriEquivBench: An Equivalence Score for Ground-Truth-Free Evaluation of Formally Verifiable Code** <br>
+    Lingfei Zeng\*, Fengdi Che\*, **Xuhan Huang**, Fei Ye, Xu Xu, Binhang Yuan, Jie Fu. <br>
+    *To Appear in the 14th International Conference on Learning Representations (ICLR)*, 2026. [[paper](https://arxiv.org/abs/2510.06296)] [[code](https://github.com/PunyGoood/VeriEquivBench)]
 
 <br>
 
