@@ -38,7 +38,7 @@ Formal languages offer what I call **rigorous verifiability**—the ability to a
 
 2.  **CALM Before the STORM: Unlocking Native Reasoning for Optimization Modeling** <br>
     Zhengyang Tang\*, Zihan Ye\*, Chenyu Huang\*, **Xuhan Huang**, Chengpeng Li, Sihang Li, Guanhua Chen, Ming Yan, Zizhuo Wang, Hongyuan Zha, Dayiheng Liu, Benyou Wang. <br>
-    * To Appear in the International Conference on Machine Learning (ICML)*, 2026. [[paper](https://arxiv.org/abs/2510.04204)]
+    *To Appear in the International Conference on Machine Learning (ICML)*, 2026. [[paper](https://arxiv.org/abs/2510.04204)]
 
 3.  **VeriEquivBench: An Equivalence Score for Ground-Truth-Free Evaluation of Formally Verifiable Code** <br>
     Lingfei Zeng\*, Fengdi Che\*, **Xuhan Huang**, Fei Ye, Xu Xu, Binhang Yuan, Jie Fu. <br>
