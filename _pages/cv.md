@@ -9,7 +9,7 @@ redirect_from:
 
 {% include base_path %}
 
-You can view my [full CV](../files/Xuhan_Huang_CV_20251218.pdf) for more details.
+You can view my [full CV](../files/Xuhan_Huang_CV_20260506.pdf) for more details.
 
 ## Education
 
@@ -30,29 +30,29 @@ You can view my [full CV](../files/Xuhan_Huang_CV_20251218.pdf) for more details
 ## Publications
 *(\* denotes equal contribution)*
 
-1.  **LLMs for Mathematical Modeling: Towards Bridging the Gap between Natural and Mathematical Languages** \
-    **Xuhan Huang**, Qingning Shen, Yan Hu, Anningzhe Gao, Benyou Wang \
-    *Findings of the Association for Computational Linguistics (NAACL)*, 2025. [[paper](https://aclanthology.org/2025.findings-naacl.146.pdf)] [[code](https://github.com/FreedomIntelligence/Mamo)]
+1.  **Re:Form—Reducing Human Priors in Scalable Formal Software Verification with RL in LLMs** \
+    Chuanhao Yan\*, Fengdi Che\*, **Xuhan Huang**\*, Xu Xu\*, Xin Li\*, Yizhi Li\*, Xingwei Qu\*, Jingzhe Shi, Chenghua Lin, Yaodong Yang, Binhang Yuan, Hang Zhao, Yu Qiao, Bowen Zhou, Jie Fu. \
+    *Transactions on Machine Learning Research (TMLR)*, 2026. [[paper](https://arxiv.org/abs/2507.16331)] [[code](https://github.com/Veri-Code/ReForm)]
 
 2.  **Federated Linear Dueling Bandits** \
     **Xuhan Huang**, Yan Hu, Zhiyan Li, Zhiyong Wang, Benyou Wang, Zhongxiang Dai \
     *AAAI Conference on Artificial Intelligence (AAAI)*, 2026. [[paper](https://arxiv.org/abs/2502.01085)]
 
-3.  **Re:Form—Reducing Human Priors in Scalable Formal Software Verification with RL in LLMs** \
-    Chuanhao Yan\*, Fengdi Che\*, **Xuhan Huang**\*, Xu Xu\*, Xin Li\*, Yizhi Li\*, Xingwei Qu\*, Jingzhe Shi, Chenghua Lin, Yaodong Yang, Binhang Yuan, Hang Zhao, Yu Qiao, Bowen Zhou, Jie Fu. \
-    *Preprint*, 2025. [[paper](https://arxiv.org/abs/2507.16331)] [[code](https://github.com/Veri-Code/ReForm)]
+3.  **LLMs for Mathematical Modeling: Towards Bridging the Gap between Natural and Mathematical Languages** \
+    **Xuhan Huang**, Qingning Shen, Yan Hu, Anningzhe Gao, Benyou Wang \
+    *Findings of the Association for Computational Linguistics (NAACL)*, 2025. [[paper](https://aclanthology.org/2025.findings-naacl.146.pdf)] [[code](https://github.com/FreedomIntelligence/Mamo)]
 
-4.  **Differentiable Evolutionary Reinforcement Learning**
-    Sitao Cheng\*, Tianle Li\*, **Xuhan Huang**\*, Xunjian Yin, Difan Zou.
-    *Preprint*, 2025. [[paper](https://arxiv.org/abs/2512.13399)] [[code](https://github.com/sitaocheng/DERL)]
+4.  **Differentiable Evolutionary Reinforcement Learning** \
+    Sitao Cheng\*, Tianle Li\*, **Xuhan Huang**\*, Xunjian Yin, Difan Zou. \
+    *ICLR 2026 Workshop on Recursive Self-Improvement*, 2026. [[paper](https://arxiv.org/abs/2512.13399)] [[code](https://github.com/sitaocheng/DERL)]
 
 5.  **VeriEquivBench: An Equivalence Score for Ground-Truth-Free Evaluation of Formally Verifiable Code** \
     Lingfei Zeng\*, Fengdi Che\*, **Xuhan Huang**, Fei Ye, Xu Xu, Binhang Yuan, Jie Fu \
-    *Preprint*, 2025. [[paper](https://arxiv.org/abs/2510.06296)] [[code](https://github.com/PunyGoood/VeriEquivBench)]
+    *International Conference on Learning Representations (ICLR)*, 2026. [[paper](https://arxiv.org/abs/2510.06296)] [[code](https://github.com/PunyGoood/VeriEquivBench)]
 
 6.  **CALM Before the STORM: Unlocking Native Reasoning for Optimization Modeling** \
     Zhengyang Tang\*, Zihan Ye\*, Chenyu Huang\*, **Xuhan Huang**, Chengpeng Li, Sihang Li, Guanhua Chen, Ming Yan, Zizhuo Wang, Hongyuan Zha, Dayiheng Liu, Benyou Wang. \
-    *Preprint*, 2025. [[paper](https://arxiv.org/abs/2510.04204)]
+    *To Appear in the International Conference on Machine Learning (ICML)*, 2026. [[paper](https://arxiv.org/abs/2510.04204)]
 
 
 ---
