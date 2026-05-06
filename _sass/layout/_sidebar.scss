@@ -24,6 +24,11 @@
     padding-top: $masthead-height;
     // Fixed elements are sized against the viewport; cap the hit area to the x-large grid.
     max-width: $x-large * 0.279661016949;
+    pointer-events: none;
+
+    > * {
+      pointer-events: auto;
+    }
   }
 
   @include breakpoint($large) {
