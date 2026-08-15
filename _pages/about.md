@@ -26,7 +26,11 @@ Formal languages offer what I call **rigorous verifiability**—the ability to a
 # Preprints
 *(\* denotes equal contribution)*
 
-1.  **Differentiable Evolutionary Reinforcement Learning** <br>
+1.  **Sparse Weight Decomposition for Efficient Circuit Extraction** <br>
+    Chuanhao Yan\*, **Xuhan Huang**\*, Yawen Duan, Zhenfei Yin, Hang Zhao, Bryan Dai, Jie Fu. <br>
+    *Preprint*, 2026. [[paper](https://arxiv.org/abs/2608.03913)] [[code](https://github.com/Veri-Safe/SWD)] [[blog](https://huggingface.co/spaces/veri-safe/SWD-Blog)]
+
+2.  **Differentiable Evolutionary Reinforcement Learning** <br>
     Sitao Cheng\*, Tianle Li\*, **Xuhan Huang**\*, Xunjian Yin, Difan Zou. <br>
     *Preprint*, 2025. [[paper](https://arxiv.org/abs/2512.13399)] [[code](https://github.com/sitaocheng/DERL)]
 
