@@ -98,7 +98,7 @@ redirect_from:
     <aside class="home-rail" aria-label="Teaching and personal notes">
       <section class="rail-block">
         <p class="rail-label"><span>Currently</span></p>
-        <div class="rail-item"><strong>Mechanistic analysis of language models</strong><span>Research Intern · IQuest Research</span></div>
+        <div class="rail-item"><strong>Mechanistic analysis of language models</strong><span>Research Intern · IQuest Research<br>Mentored by <a href="https://bigaidream.github.io/" target="_blank" rel="noopener noreferrer">Jie Fu</a></span></div>
         <div class="rail-item"><strong>MPhil in Computer Science</strong><span>CUHK-Shenzhen</span></div>
       </section>
 
