@@ -40,7 +40,7 @@
   venue: "Transactions on Machine Learning Research"
   year: 2026
   venue_label: "TMLR · 2026"
-  summary: "Training code agents with objective feedback from a formal software verifier."
+  summary: "Training code agents with objective feedback from a formal verifier."
   home_author_limit: 5
   figure:
     type: image
