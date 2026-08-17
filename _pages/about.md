@@ -103,11 +103,19 @@ redirect_from:
       </section>
 
       <section class="rail-block">
-        <a class="rail-label" href="{{ '/teaching/' | relative_url }}"><span>Teaching</span><span class="rail-label__arrow" aria-hidden="true">↗</span></a>
+        <p class="rail-label"><span>Teaching</span></p>
         <div class="rail-item"><strong>Honours ODE</strong><span>Teaching Fellow · Fall 2024</span></div>
         <div class="rail-item"><strong>Honours Calculus</strong><span>Teaching Fellow · Spring 2024</span></div>
         <div class="rail-item"><strong>Student Seminars</strong><span>PPO &amp; veRL · 2025<br>Real Analysis · 2023</span></div>
         <a class="rail-link" href="{{ '/teaching/' | relative_url }}">View teaching →</a>
+      </section>
+
+      <section class="rail-block">
+        <p class="rail-label"><span>Tools &amp; Resources</span></p>
+        <div class="rail-item">
+          <strong><a href="https://github.com/gaoxin492/PaperFeeder" target="_blank" rel="noopener noreferrer">PaperFeeder ↗</a></strong>
+          <span>An open-source paper-reading agent I contribute to, with personalized daily research digests.</span>
+        </div>
       </section>
 
       <section class="rail-block">
