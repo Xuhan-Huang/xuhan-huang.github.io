@@ -1,65 +1,119 @@
 ---
+layout: redesign
 permalink: /
 title: ""
-author_profile: true
-redirect_from: 
+description: "Xuhan Huang is an MPhil student in Computer Science at CUHK-Shenzhen, working on AI safety, mechanistic understanding, and verifiable reasoning."
+nav_key: home
+body_class: home-page
+redirect_from:
   - /about/
   - /about.html
 ---
-# About Me
 
-Hello! I'm Xuhan Huang, a senior mathematics student at The Chinese University of Hong Kong, Shenzhen, where I am fortunate to be advised by Prof. [Benyou Wang](https://wabyking.github.io/old.html) and Prof. [Zhongxiang Dai](https://daizhongxiang.github.io/). Currently, I am mentored by Prof. [Jie Fu](https://bigaidream.github.io/).
+<main id="main-content" class="site-shell">
+  <section class="home-intro" aria-labelledby="home-name">
+    <div class="identity-card">
+      <img class="identity-card__portrait" src="{{ '/images/homepage_small.jpg' | relative_url }}" alt="Portrait of Xuhan Huang" width="140" height="140">
+      <div class="identity-card__copy">
+        <h1 id="home-name">Xuhan Huang</h1>
+        <p class="identity-card__role">MPhil in Computer Science</p>
+        <p class="identity-card__affiliation">CUHK-Shenzhen</p>
+      </div>
+    </div>
 
-My research goal is to build verifiably safe and aligned AI. I believe that the path to trustworthy artificial intelligence lies in moving from today's empirical, feedback-based systems to a new paradigm grounded in the mathematical certainty of formal languages.
+    <div class="about-copy">
+      <p class="section-label">About</p>
+      <p class="about-copy__text">I am an MPhil student in Computer Science at CUHK-Shenzhen. I completed my undergraduate studies in Applied Mathematics there, where I was advised by Professors <a href="https://wabyking.github.io/old.html" target="_blank" rel="noopener noreferrer">Benyou Wang</a> and <a href="https://daizhongxiang.github.io/" target="_blank" rel="noopener noreferrer">Zhongxiang Dai</a>. I am currently mentored by Professor <a href="https://bigaidream.github.io/" target="_blank" rel="noopener noreferrer">Jie Fu</a>.</p>
+      <p class="about-copy__text">My research interests lie broadly in AI safety, with a focus on <a class="about-copy__focus-link" href="{{ '/research/' | relative_url }}">mechanistic understanding and verifiable reasoning</a>. I am interested in understanding the internal mechanisms that shape model behavior, and in using verifiable feedback to support more reliable and scalable training and evaluation.</p>
 
-Formal languages offer what I call **rigorous verifiability**—the ability to automatically and objectively prove that a system's behavior aligns with its specifications. This transforms AI development by providing two key advantages: a perfect signal for scalable training and a direct pathway to provable safety. My work aims to leverage these properties to mature AI safety from an empirical art into a rigorous science.
+      <div class="contact-block" aria-label="Contact and profile links">
+        <div class="contact-row">
+          <span class="contact-row__label">Email:</span>
+          <a href="mailto:xuhanhuang@link.cuhk.edu.cn">xuhanhuang@link.cuhk.edu.cn</a>
+        </div>
+        <div class="contact-row">
+          <span class="contact-row__label">Links:</span>
+          <span class="contact-row__links">
+            <a href="https://scholar.google.com/citations?user=Iu80TyIAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a>
+            <span class="contact-row__separator" aria-hidden="true">|</span>
+            <a href="https://github.com/Xuhan-Huang" target="_blank" rel="noopener noreferrer">GitHub</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
 
-### My Research Philosophy
-*   Problem First: I believe that *what* to solve is more important than *how* to solve it. My work begins by identifying critical challenges.
-*   Principled Solutions: I work to understand problems from first principles. The deep, theoretical insight gained from this approach is what guides the development of scalable and practical solutions.
+  <div class="home-grid">
+    <section class="home-main" aria-labelledby="recent-work-heading">
+      <div class="section-heading-row">
+        <p id="recent-work-heading" class="section-label">Recent Work</p>
+        <a class="section-heading-row__link" href="{{ '/research/' | relative_url }}">All research ↗</a>
+      </div>
 
-### Research Interests
-1.  Scalable Formal Reasoning: Harnessing the perfect, self-contained signals within formal languages to train powerful and reliable AI agents.
-2.  AI Safety via Formal Methods: Using rigorous verification to guarantee that autonomous systems operate transparently and without unintended behaviors, ensuring they align perfectly with user intentions.
-3.  Compositional Generalization: Investigating how models can learn to systematically combine existing skills to generalize and solve complex, unseen tasks, for which I believe formal language reasoning is the ideal test bed.
+      {% for work in site.data.research %}
+        {% if work.home_group == 'featured' %}
+          <article class="featured-work" id="work-{{ work.id }}">
+            <div class="research-figure {{ work.figure.class }}">
+              {% if work.figure.type == 'iframe' %}
+                <iframe src="{{ work.figure.src | relative_url }}" title="{{ work.figure.alt }}" scrolling="no"></iframe>
+              {% else %}
+                <img src="{{ work.figure.src | relative_url }}" alt="{{ work.figure.alt }}" loading="lazy">
+              {% endif %}
+            </div>
+            <div class="featured-work__copy">
+              <h2>{{ work.title }}</h2>
+              <p class="authors">{% include research-authors.html work=work compact=true %}</p>
+              <p class="work-summary">{{ work.summary }}</p>
+              <div class="work-meta">
+                <span class="venue">{{ work.venue_label }}</span>
+                {% include research-actions.html links=work.links %}
+              </div>
+            </div>
+          </article>
+        {% endif %}
+      {% endfor %}
 
-# Preprints
-*(\* denotes equal contribution)*
+      <p class="equal-note">* Equal contribution.</p>
 
-1.  **Sparse Weight Decomposition for Efficient Circuit Extraction** <br>
-    Chuanhao Yan\*, **Xuhan Huang**\*, Yawen Duan, Zhenfei Yin, Hang Zhao, Bryan Dai, Jie Fu. <br>
-    *Preprint*, 2026. [[paper](https://arxiv.org/abs/2608.03913)] [[code](https://github.com/Veri-Safe/SWD)] [[blog](https://huggingface.co/spaces/veri-safe/SWD-Blog)]
+      <section class="more-research" aria-labelledby="more-research-heading">
+        <p id="more-research-heading" class="section-label">More Research</p>
+        <div class="more-list">
+          {% for work in site.data.research %}
+            {% if work.home_group == 'more' %}
+              <article class="more-work">
+                <div class="more-work__heading">
+                  <span class="more-work__title">{{ work.title }}</span>
+                  <span class="venue">{{ work.venue_label }}</span>
+                </div>
+                <p class="authors">{% include research-authors.html work=work %}</p>
+                <div class="action-links">{% include research-actions.html links=work.links %}</div>
+              </article>
+            {% endif %}
+          {% endfor %}
+        </div>
+        <p class="equal-note">* Equal contribution.</p>
+      </section>
+    </section>
 
-2.  **Differentiable Evolutionary Reinforcement Learning** <br>
-    Sitao Cheng\*, Tianle Li\*, **Xuhan Huang**\*, Xunjian Yin, Difan Zou. <br>
-    *Preprint*, 2025. [[paper](https://arxiv.org/abs/2512.13399)] [[code](https://github.com/sitaocheng/DERL)]
+    <aside class="home-rail" aria-label="Teaching and personal notes">
+      <section class="rail-block">
+        <p class="rail-label"><span>Currently</span></p>
+        <div class="rail-item"><strong>Mechanistic analysis of language models</strong><span>Research Intern · IQuest Research</span></div>
+        <div class="rail-item"><strong>MPhil in Computer Science</strong><span>CUHK-Shenzhen</span></div>
+      </section>
 
-# Publications
+      <section class="rail-block">
+        <a class="rail-label" href="{{ '/teaching/' | relative_url }}"><span>Teaching</span><span class="rail-label__arrow" aria-hidden="true">↗</span></a>
+        <div class="rail-item"><strong>Honours ODE</strong><span>Teaching Fellow · Fall 2024</span></div>
+        <div class="rail-item"><strong>Honours Calculus</strong><span>Teaching Fellow · Spring 2024</span></div>
+        <div class="rail-item"><strong>Student Seminars</strong><span>PPO &amp; veRL · 2025<br>Real Analysis · 2023</span></div>
+        <a class="rail-link" href="{{ '/teaching/' | relative_url }}">View teaching →</a>
+      </section>
 
-1.  **Re:Form—Reducing Human Priors in Scalable Formal Software Verification with RL in LLMs** <br>
-    Chuanhao Yan\*, Fengdi Che\*, **Xuhan Huang**\*, Xu Xu\*, Xin Li\*, Yizhi Li\*, Xingwei Qu\*, Jingzhe Shi, Chenghua Lin, Yaodong Yang, Binhang Yuan, Hang Zhao, Yu Qiao, Bowen Zhou, Jie Fu. <br>
-    *Transactions on Machine Learning Research (TMLR)*, 2026. [[paper](https://arxiv.org/abs/2507.16331)] [[code](https://github.com/Veri-Code/ReForm)]
-
-2.  **CALM Before the STORM: Unlocking Native Reasoning for Optimization Modeling** <br>
-    Zhengyang Tang\*, Zihan Ye\*, Chenyu Huang\*, **Xuhan Huang**, Chengpeng Li, Sihang Li, Guanhua Chen, Ming Yan, Zizhuo Wang, Hongyuan Zha, Dayiheng Liu, Benyou Wang. <br>
-    *To Appear in the International Conference on Machine Learning (ICML)*, 2026. [[paper](https://arxiv.org/abs/2510.04204)]
-
-3.  **VeriEquivBench: An Equivalence Score for Ground-Truth-Free Evaluation of Formally Verifiable Code** <br>
-    Lingfei Zeng\*, Fengdi Che\*, **Xuhan Huang**, Fei Ye, Xu Xu, Binhang Yuan, Jie Fu. <br>
-    *International Conference on Learning Representations (ICLR)*, 2026. [[paper](https://arxiv.org/abs/2510.06296)] [[code](https://github.com/PunyGoood/VeriEquivBench)]
-
-4.  **Federated Linear Dueling Bandits** <br>
-    **Xuhan Huang**, Yan Hu, Zhiyan Li, Zhiyong Wang, Benyou Wang, Zhongxiang Dai. <br>
-    *AAAI Conference on Artificial Intelligence (AAAI)*, 2026. [[paper](https://arxiv.org/abs/2502.01085)]
-
-5.  **LLMs for Mathematical Modeling: Towards Bridging the Gap between Natural and Mathematical Languages** <br>
-    **Xuhan Huang**, Qingning Shen, Yan Hu, Anningzhe Gao, Benyou Wang. <br>
-    *Findings of the Association for Computational Linguistics (NAACL)*, 2025. [[paper](https://aclanthology.org/2025.findings-naacl.146.pdf)] [[code](https://github.com/FreedomIntelligence/Mamo)]
-
-<br>
-
-# Beyond Research
-
-I'm passionate about fitness and can often be found at the gym or on the basketball court. Feel free to reach out if you're ever looking for a partner for either!
-
-<script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=6KHTNskGKIHizgSVH1L30pgjFniH1til_msFart6q7s&cl=ffffff&w=a"></script>
+      <section class="rail-block">
+        <p class="rail-label"><span>Off the clock</span></p>
+        <p class="off-clock">Usually at the gym or on a basketball court.</p>
+      </section>
+    </aside>
+  </div>
+</main>

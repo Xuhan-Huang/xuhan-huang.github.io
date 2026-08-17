@@ -1,0 +1,214 @@
+- id: swd
+  research_order: 1
+  home_group: featured
+  title: "Sparse Weight Decomposition for Efficient Circuit Extraction"
+  venue: "Preprint"
+  year: 2026
+  venue_label: "Preprint · 2026"
+  summary: "Extracting faithful model circuits through a sparse decomposition of dense neural-network weights."
+  figure:
+    type: iframe
+    src: "/assets/embeds/swd-hero.html"
+    class: "figure-swd"
+    alt: "Animated Sparse Weight Decomposition diagram showing dense weights becoming sparse read and write components."
+  authors:
+    - name: "Chuanhao Yan"
+      equal: true
+    - name: "Xuhan Huang"
+      equal: true
+      self: true
+    - name: "Yawen Duan"
+    - name: "Zhenfei Yin"
+    - name: "Hang Zhao"
+    - name: "Bryan Dai"
+    - name: "Jie Fu"
+  links:
+    - label: "Paper"
+      type: paper
+      url: "https://arxiv.org/abs/2608.03913"
+    - label: "Code"
+      type: code
+      url: "https://github.com/Veri-Safe/SWD"
+    - label: "Blog"
+      type: blog
+      url: "https://huggingface.co/spaces/veri-safe/SWD-Blog"
+
+- id: reform
+  research_order: 3
+  home_group: featured
+  title: "Re:Form—Reducing Human Annotations in Scalable Formal Software Verification with RL in LLMs: A Preliminary Study on Dafny"
+  venue: "Transactions on Machine Learning Research"
+  year: 2026
+  venue_label: "TMLR · 2026"
+  summary: "Training code agents with objective feedback from a formal software verifier."
+  home_author_limit: 5
+  figure:
+    type: image
+    src: "/assets/images/research/reform-rl.png"
+    class: "figure-reform"
+    alt: "Re:Form reinforcement-learning pipeline connecting policy sampling, specification-subset reward, verification reward, and policy updates."
+  authors:
+    - name: "Chuanhao Yan"
+      equal: true
+    - name: "Fengdi Che"
+      equal: true
+    - name: "Xuhan Huang"
+      equal: true
+      self: true
+    - name: "Xu Xu"
+      equal: true
+    - name: "Xin Li"
+      equal: true
+    - name: "Yizhi Li"
+      equal: true
+    - name: "Xingwei Qu"
+      equal: true
+    - name: "Jingzhe Shi"
+    - name: "Chenghua Lin"
+    - name: "Yaodong Yang"
+    - name: "Binhang Yuan"
+    - name: "Hang Zhao"
+    - name: "Yu Qiao"
+    - name: "Bowen Zhou"
+    - name: "Jie Fu"
+  links:
+    - label: "Paper"
+      type: paper
+      url: "https://arxiv.org/abs/2507.16331"
+    - label: "Code"
+      type: code
+      url: "https://github.com/Veri-Code/ReForm"
+
+- id: fldb
+  research_order: 6
+  home_group: featured
+  title: "Federated Linear Dueling Bandits"
+  venue: "AAAI Conference on Artificial Intelligence"
+  year: 2026
+  venue_label: "AAAI · 2026"
+  summary: "Learning from distributed pairwise preferences while reducing communication rounds."
+  figure:
+    type: image
+    src: "/assets/images/research/fldb-cover.png"
+    class: "figure-fldb"
+    alt: "Comparison of FLDB-GD and FLDB-OGD communication patterns derived from the original Draw.io figure."
+  authors:
+    - name: "Xuhan Huang"
+      self: true
+    - name: "Yan Hu"
+    - name: "Zhiyan Li"
+    - name: "Zhiyong Wang"
+    - name: "Benyou Wang"
+    - name: "Zhongxiang Dai"
+  links:
+    - label: "Paper"
+      type: paper
+      url: "https://arxiv.org/abs/2502.01085"
+
+- id: mamo
+  research_order: 7
+  home_group: featured
+  title: "LLMs for Mathematical Modeling: Towards Bridging the Gap between Natural and Mathematical Languages"
+  venue: "Findings of the Association for Computational Linguistics: NAACL"
+  year: 2025
+  venue_label: "NAACL Findings · 2025"
+  summary: "Evaluating whether language models can translate real-world problems into executable mathematical models."
+  figure:
+    type: image
+    src: "/assets/images/research/mamo-pipeline.png"
+    class: "figure-mamo"
+    alt: "MAMO pipeline in which a language model produces a mathematical model whose solved answer is checked against the ground answer."
+  authors:
+    - name: "Xuhan Huang"
+      self: true
+    - name: "Qingning Shen"
+    - name: "Yan Hu"
+    - name: "Anningzhe Gao"
+    - name: "Benyou Wang"
+  links:
+    - label: "Paper"
+      type: paper
+      url: "https://aclanthology.org/2025.findings-naacl.146/"
+    - label: "Code"
+      type: code
+      url: "https://github.com/FreedomIntelligence/Mamo"
+
+- id: veriequivbench
+  research_order: 5
+  home_group: more
+  title: "VeriEquivBench: An Equivalence Score for Ground-Truth-Free Evaluation of Formally Verifiable Code"
+  venue: "International Conference on Learning Representations"
+  year: 2026
+  venue_label: "ICLR · 2026"
+  authors:
+    - name: "Lingfei Zeng"
+      equal: true
+    - name: "Fengdi Che"
+      equal: true
+    - name: "Xuhan Huang"
+      self: true
+    - name: "Fei Ye"
+    - name: "Xu Xu"
+    - name: "Binhang Yuan"
+    - name: "Jie Fu"
+  links:
+    - label: "Paper"
+      type: paper
+      url: "https://arxiv.org/abs/2510.06296"
+    - label: "Code"
+      type: code
+      url: "https://github.com/PunyGoood/VeriEquivBench"
+
+- id: calm
+  research_order: 2
+  home_group: more
+  title: "CALM Before the STORM: Unlocking Native Reasoning for Optimization Modeling"
+  venue: "International Conference on Machine Learning"
+  year: 2026
+  venue_label: "ICML · 2026"
+  authors:
+    - name: "Zhengyang Tang"
+      equal: true
+    - name: "Zihan Ye"
+      equal: true
+    - name: "Chenyu Huang"
+      equal: true
+    - name: "Xuhan Huang"
+      self: true
+    - name: "Chengpeng Li"
+    - name: "Sihang Li"
+    - name: "Guanhua Chen"
+    - name: "Ming Yan"
+    - name: "Zizhuo Wang"
+    - name: "Hongyuan Zha"
+    - name: "Dayiheng Liu"
+    - name: "Benyou Wang"
+  links:
+    - label: "Paper"
+      type: paper
+      url: "https://arxiv.org/abs/2510.04204"
+
+- id: derl
+  research_order: 4
+  home_group: more
+  title: "Differentiable Evolutionary Reinforcement Learning"
+  venue: "ICLR 2026 Workshop on Recursive Self-Improvement"
+  year: 2026
+  venue_label: "ICLR RSI · 2026 Poster"
+  authors:
+    - name: "Sitao Cheng"
+      equal: true
+    - name: "Tianle Li"
+      equal: true
+    - name: "Xuhan Huang"
+      equal: true
+      self: true
+    - name: "Xunjian Yin"
+    - name: "Difan Zou"
+  links:
+    - label: "Paper"
+      type: paper
+      url: "https://arxiv.org/abs/2512.13399"
+    - label: "Code"
+      type: code
+      url: "https://github.com/sitaocheng/DERL"

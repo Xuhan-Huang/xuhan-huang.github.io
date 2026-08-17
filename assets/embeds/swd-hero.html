@@ -1,0 +1,1868 @@
+<div class="hero-banner" data-astro-cid-uzw5or4x> <figure class="html-embed" id="banner"><div class="html-embed__card is-frameless"><div id="frag-6v645qxxrxk"><style>
+    html,body{margin:0;padding:0;background:#fff;overflow:hidden;}
+    .hero-banner,.html-embed{margin:0!important;padding:0!important;width:100%!important;}
+    .swd-hero-embed{color-scheme:light;color:#111;}
+    .swd-hero-embed .figure-card{background:transparent;border:0;border-radius:0;overflow:visible;}
+    .swd-hero-embed .figure-root{display:block;width:100%;height:auto;aspect-ratio:1120 / 596;}
+    .hero-banner[data-astro-cid-uzw5or4x]{aspect-ratio:auto!important;overflow:visible!important;}
+    /* remove the outer card frame so the hero reads borderless like the original cover */
+    .hero-banner .html-embed__card{border:0!important;background:transparent!important;border-radius:0!important;padding:0!important;box-shadow:none!important;}
+    /* restore SVG label colors: blog global ".html-embed__card svg text{fill:var(--text-color)}" was forcing them black */
+    .swd-hero-embed .figure-card svg text.rw{fill:#1B6F6A!important;}
+    .swd-hero-embed .figure-card svg text.start-note{fill:#71808A!important;}
+    .swd-hero-embed .figure-card svg text.small{fill:#5f5f5f!important;}
+    .swd-hero-embed .figure-card svg text.title,.swd-hero-embed .figure-card svg text.mlabel,.swd-hero-embed .figure-card svg text.op{fill:#111!important;}
+    .swd-hero-embed .figure-card svg text.hero-eyebrow{fill:#7a8590!important;}
+    .swd-hero-embed .figure-card svg text.hero-headline{fill:#1c2530!important;}
+    .swd-hero-embed .figure-card svg text.hero-subhead{fill:#5f6a74!important;}
+    .swd-hero-embed .figure-tools{margin-top:12px;display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;}
+    .swd-hero-embed .figure-hint{font:13px/1.4 var(--default-font-family,"Avenir Next",Avenir,"Helvetica Neue",Helvetica,Arial,sans-serif);color:#7a7a7a;opacity:0;transition:opacity 400ms ease;margin:0 auto 0 0;}
+    .swd-hero-embed .figure-hint.is-visible{opacity:1;}
+    .swd-hero-embed .figure-hint__key{color:#1B6F6A;font-weight:700;}
+    .swd-hero-embed .figure-tools__buttons{flex:0 0 auto;display:flex;align-items:center;gap:8px;}
+    @media (prefers-reduced-motion: reduce){.swd-hero-embed .figure-hint{transition:none;}}
+    .swd-hero-embed .replay-button{appearance:none;display:inline-flex;align-items:center;gap:6px;border:1px solid #cfe0dd;background:#f2f8f7;color:#1B6F6A;cursor:pointer;font:600 12px/1 var(--default-font-family,"Avenir Next",Avenir,"Helvetica Neue",Helvetica,Arial,sans-serif);padding:7px 13px;border-radius:999px;text-decoration:none;transition:background .18s ease,border-color .18s ease,color .18s ease,box-shadow .18s ease;}
+    .swd-hero-embed .replay-button::before{content:"\21bb";font-size:13px;line-height:1;}
+    .swd-hero-embed .replay-button:hover,.swd-hero-embed .replay-button:focus-visible{background:#1B6F6A;border-color:#1B6F6A;color:#fff;box-shadow:0 1px 4px rgba(27,111,106,0.25);outline:none;}
+    .swd-hero-embed .replay-button[hidden]{display:none;}
+    .swd-hero-embed .figure-tools{display:none!important;}
+  </style>
+<div class="swd-hero-embed">
+  <div class="figure-card"><svg id="hero-fig1" class="figure-root" xmlns="http://www.w3.org/2000/svg" viewBox="138 -32 1120 596" role="img" aria-labelledby="hero-fig1-title hero-fig1-desc">
+        <title id="hero-fig1-title">From dense weights to a sparse read/write circuit</title>
+        <desc id="hero-fig1-desc">A dense starting matrix fades into a residual while sparse A and B matrices and their bipartite read/write circuit become the protagonist.</desc>
+        <style><![CDATA[
+          .sans{font-family:var(--default-font-family,"Avenir Next",Avenir,"Helvetica Neue",Helvetica,Arial,sans-serif);}
+          .serif{font-family:var(--blog-serif,Georgia,"Times New Roman",Times,serif);}
+          .title{font-size:21px;fill:#111;font-weight:700;}
+          .hero-eyebrow{font-size:13px;fill:#7a8590;font-weight:800;letter-spacing:1.1px;}
+          .hero-headline{font-size:30px;fill:#1c2530;font-weight:500;font-family:var(--blog-serif,Georgia,"Times New Roman",Times,serif);}
+          .hero-subhead{font-size:14px;fill:#5f6a74;}
+          .small{font-size:16px;fill:#5f5f5f;}
+          .start-note{font-size:18px;fill:#71808A;font-weight:600;letter-spacing:0.01em;}
+          .rw{font-size:18px;fill:#1B6F6A;font-weight:700;}
+          .mlabel{font-size:40px;fill:#111;font-family:var(--blog-serif,Georgia,"Times New Roman",Times,serif);}
+          .op{font-size:46px;fill:#111;font-family:var(--blog-serif,Georgia,"Times New Roman",Times,serif);}
+          .node{stroke:#111;stroke-width:1.6;fill:#fff;}
+          .unit{stroke:#1B6F6A;stroke-width:2.4;fill:#fff;cursor:pointer;transform-box:fill-box;transform-origin:center;}
+          .dense{stroke:#c9c9c9;stroke-width:1.0;fill:none;}
+          .sparse{stroke:#555;stroke-width:1.5;fill:none;}
+          .cell{stroke-width:1;}
+          .matrix-tile{transform-box:fill-box;transform-origin:center;}
+          .matrix-tile--dense{fill:#C3D6EC;stroke:rgba(0,0,0,0.08);}
+          .matrix-tile--nonzero{fill:#1B6F6A;stroke:rgba(0,0,0,0.08);}
+          .matrix-tile--zero{fill:#eef2f2;stroke:rgba(0,0,0,0.04);}
+          .dense-residual{opacity:0.24;}
+          .bg-wash{pointer-events:none;}
+          .scene-part{transition:opacity 150ms ease,stroke 150ms ease,stroke-width 150ms ease,fill 150ms ease,transform 150ms ease;}
+          .is-dimmed{opacity:0.18;}
+          .is-active-path{opacity:1;stroke:#1B6F6A;stroke-width:3.2;}
+          .is-active-cell{opacity:1;stroke:#0d4b47;stroke-width:1.5;stroke-opacity:1;}
+          .is-active-node{opacity:1;stroke:#1B6F6A;stroke-width:2.2;}
+          .is-active-unit{opacity:1;fill:#1B6F6A;stroke:#1B6F6A;stroke-width:2.8;transform:scale(1.16);}
+          .unit:focus{outline:none;}
+          .unit:focus-visible{outline:2px solid #1B6F6A;outline-offset:3px;}
+          @media (prefers-reduced-motion: reduce){
+            .scene-part{transition:none;}
+          }
+        ]]></style>
+        <defs>
+          <radialGradient id="fig1-wash-teal" cx="1060" cy="100" r="520" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#DDF5F0" stop-opacity="0.5"/>
+            <stop offset="0.48" stop-color="#DDF5F0" stop-opacity="0.18"/>
+            <stop offset="1" stop-color="#DDF5F0" stop-opacity="0"/>
+          </radialGradient>
+          <radialGradient id="fig1-wash-blue" cx="330" cy="150" r="460" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#DDEBFA" stop-opacity="0.42"/>
+            <stop offset="0.52" stop-color="#DDEBFA" stop-opacity="0.14"/>
+            <stop offset="1" stop-color="#DDEBFA" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <rect x="138" y="-32" width="1120" height="596" fill="#fff"/>
+        <rect class="bg-wash" x="138" y="-32" width="1120" height="596" fill="url(#fig1-wash-teal)"/>
+        <rect class="bg-wash" x="138" y="-32" width="1120" height="596" fill="url(#fig1-wash-blue)"/>
+        <g data-static-fallback="true">
+          <text class="sans hero-eyebrow" x="240" y="-8" text-anchor="start">SPARSE WEIGHT DECOMPOSITION</text>
+          <text class="serif hero-headline" x="238" y="22" text-anchor="start">Dense weights become sparse read/write components</text>
+          <text class="sans hero-subhead" x="240" y="46" text-anchor="start">Selected bottleneck units carry task behavior through sparse input and output edges.</text>
+
+          <g data-matrix="W" class="dense-residual">
+            <rect x="294" y="98" width="22" height="22" rx="7" ry="7" class="cell matrix-tile matrix-tile--dense" data-mat="W" data-row="0" data-col="0" data-nonzero="true"/>
+            <rect x="320" y="98" width="22" height="22" rx="7" ry="7" class="cell matrix-tile matrix-tile--dense" data-mat="W" data-row="0" data-col="1" data-nonzero="true"/>
+            <rect x="346" y="98" width="22" height="22" rx="7" ry="7" class="cell matrix-tile matrix-tile--dense" data-mat="W" data-row="0" data-col="2" data-nonzero="true"/>
+            <rect x="372" y="98" width="22" height="22" rx="7" ry="7" class="cell matrix-tile matrix-tile--dense" data-mat="W" data-row="0" data-col="3" data-nonzero="true"/>
+            <rect x="398" y="98" width="22" height="22" rx="7" ry="7" class="cell matrix-tile matrix-tile--dense" data-mat="W" data-row="0" data-col="4" data-nonzero="true"/>
+            <rect x="424" y="98" width="22" height="22" rx="7" ry="7" class="cell matrix-tile matrix-tile--dense" data-mat="W" data-row="0" data-col="5" data-nonzero="true"/>
+            <rect x="294" y="124" width="22" height="22" rx="7" ry="7" class="cell matrix-tile matrix-tile--dense" data-mat="W" data-row="1" data-col="0" data-nonzero="true"/>
+            <rect x="320" y="124" width="22" height="22" rx="7" ry="7" class="cell matrix-tile matrix-tile--dense" data-mat="W" data-row="1" data-col="1" data-nonzero="true"/>
+            <rect x="346" y="124" width="22" height="22" rx="7" ry="7" class="cell matrix-tile matrix-tile--dense" data-mat="W" data-row="1" data-col="2" data-nonzero="true"/>
+            <rect x="372" y="124" width="22" height="22" rx="7" ry="7" class="cell matrix-tile matrix-tile--dense" data-mat="W" data-row="1" data-col="3" data-nonzero="true"/>
+            <rect x="398" y="124" width="22" height="22" rx="7" ry="7" class="cell matrix-tile matrix-tile--dense" data-mat="W" data-row="1" data-col="4" data-nonzero="true"/>
+            <rect x="424" y="124" width="22" height="22" rx="7" ry="7" class="cell matrix-tile matrix-tile--dense" data-mat="W" data-row="1" data-col="5" data-nonzero="true"/>
+            <rect x="294" y="150" width="22" height="22" rx="7" ry="7" class="cell matrix-tile matrix-tile--dense" data-mat="W" data-row="2" data-col="0" data-nonzero="true"/>
+            <rect x="320" y="150" width="22" height="22" rx="7" ry="7" class="cell matrix-tile matrix-tile--dense" data-mat="W" data-row="2" data-col="1" data-nonzero="true"/>
+            <rect x="346" y="150" width="22" height="22" rx="7" ry="7" class="cell matrix-tile matrix-tile--dense" data-mat="W" data-row="2" data-col="2" data-nonzero="true"/>
+            <rect x="372" y="150" width="22" height="22" rx="7" ry="7" class="cell matrix-tile matrix-tile--dense" data-mat="W" data-row="2" data-col="3" data-nonzero="true"/>
+            <rect x="398" y="150" width="22" height="22" rx="7" ry="7" class="cell matrix-tile matrix-tile--dense" data-mat="W" data-row="2" data-col="4" data-nonzero="true"/>
+            <rect x="424" y="150" width="22" height="22" rx="7" ry="7" class="cell matrix-tile matrix-tile--dense" data-mat="W" data-row="2" data-col="5" data-nonzero="true"/>
+            <rect x="294" y="176" width="22" height="22" rx="7" ry="7" class="cell matrix-tile matrix-tile--dense" data-mat="W" data-row="3" data-col="0" data-nonzero="true"/>
+            <rect x="320" y="176" width="22" height="22" rx="7" ry="7" class="cell matrix-tile matrix-tile--dense" data-mat="W" data-row="3" data-col="1" data-nonzero="true"/>
+            <rect x="346" y="176" width="22" height="22" rx="7" ry="7" class="cell matrix-tile matrix-tile--dense" data-mat="W" data-row="3" data-col="2" data-nonzero="true"/>
+            <rect x="372" y="176" width="22" height="22" rx="7" ry="7" class="cell matrix-tile matrix-tile--dense" data-mat="W" data-row="3" data-col="3" data-nonzero="true"/>
+            <rect x="398" y="176" width="22" height="22" rx="7" ry="7" class="cell matrix-tile matrix-tile--dense" data-mat="W" data-row="3" data-col="4" data-nonzero="true"/>
+            <rect x="424" y="176" width="22" height="22" rx="7" ry="7" class="cell matrix-tile matrix-tile--dense" data-mat="W" data-row="3" data-col="5" data-nonzero="true"/>
+            <rect x="294" y="202" width="22" height="22" rx="7" ry="7" class="cell matrix-tile matrix-tile--dense" data-mat="W" data-row="4" data-col="0" data-nonzero="true"/>
+            <rect x="320" y="202" width="22" height="22" rx="7" ry="7" class="cell matrix-tile matrix-tile--dense" data-mat="W" data-row="4" data-col="1" data-nonzero="true"/>
+            <rect x="346" y="202" width="22" height="22" rx="7" ry="7" class="cell matrix-tile matrix-tile--dense" data-mat="W" data-row="4" data-col="2" data-nonzero="true"/>
+            <rect x="372" y="202" width="22" height="22" rx="7" ry="7" class="cell matrix-tile matrix-tile--dense" data-mat="W" data-row="4" data-col="3" data-nonzero="true"/>
+            <rect x="398" y="202" width="22" height="22" rx="7" ry="7" class="cell matrix-tile matrix-tile--dense" data-mat="W" data-row="4" data-col="4" data-nonzero="true"/>
+            <rect x="424" y="202" width="22" height="22" rx="7" ry="7" class="cell matrix-tile matrix-tile--dense" data-mat="W" data-row="4" data-col="5" data-nonzero="true"/>
+            <rect x="294" y="228" width="22" height="22" rx="7" ry="7" class="cell matrix-tile matrix-tile--dense" data-mat="W" data-row="5" data-col="0" data-nonzero="true"/>
+            <rect x="320" y="228" width="22" height="22" rx="7" ry="7" class="cell matrix-tile matrix-tile--dense" data-mat="W" data-row="5" data-col="1" data-nonzero="true"/>
+            <rect x="346" y="228" width="22" height="22" rx="7" ry="7" class="cell matrix-tile matrix-tile--dense" data-mat="W" data-row="5" data-col="2" data-nonzero="true"/>
+            <rect x="372" y="228" width="22" height="22" rx="7" ry="7" class="cell matrix-tile matrix-tile--dense" data-mat="W" data-row="5" data-col="3" data-nonzero="true"/>
+            <rect x="398" y="228" width="22" height="22" rx="7" ry="7" class="cell matrix-tile matrix-tile--dense" data-mat="W" data-row="5" data-col="4" data-nonzero="true"/>
+            <rect x="424" y="228" width="22" height="22" rx="7" ry="7" class="cell matrix-tile matrix-tile--dense" data-mat="W" data-row="5" data-col="5" data-nonzero="true"/>
+          </g>
+
+          <g data-matrix="A">
+            <rect x="669" y="98" width="22" height="22" rx="7" ry="7" class="cell matrix-tile matrix-tile--nonzero" data-mat="A" data-row="0" data-col="0" data-nonzero="true"/>
+            <rect x="695" y="98" width="22" height="22" rx="7" ry="7" class="cell matrix-tile matrix-tile--zero" data-mat="A" data-row="0" data-col="1" data-nonzero="false"/>
+            <rect x="721" y="98" width="22" height="22" rx="7" ry="7" class="cell matrix-tile matrix-tile--nonzero" data-mat="A" data-row="0" data-col="2" data-nonzero="true"/>
+            <rect x="747" y="98" width="22" height="22" rx="7" ry="7" class="cell matrix-tile matrix-tile--zero" data-mat="A" data-row="0" data-col="3" data-nonzero="false"/>
+            <rect x="773" y="98" width="22" height="22" rx="7" ry="7" class="cell matrix-tile matrix-tile--zero" data-mat="A" data-row="0" data-col="4" data-nonzero="false"/>
+            <rect x="799" y="98" width="22" height="22" rx="7" ry="7" class="cell matrix-tile matrix-tile--zero" data-mat="A" data-row="0" data-col="5" data-nonzero="false"/>
+            <rect x="669" y="124" width="22" height="22" rx="7" ry="7" class="cell matrix-tile matrix-tile--nonzero" data-mat="A" data-row="1" data-col="0" data-nonzero="true"/>
+            <rect x="695" y="124" width="22" height="22" rx="7" ry="7" class="cell matrix-tile matrix-tile--zero" data-mat="A" data-row="1" data-col="1" data-nonzero="false"/>
+            <rect x="721" y="124" width="22" height="22" rx="7" ry="7" class="cell matrix-tile matrix-tile--zero" data-mat="A" data-row="1" data-col="2" data-nonzero="false"/>
+            <rect x="747" y="124" width="22" height="22" rx="7" ry="7" class="cell matrix-tile matrix-tile--zero" data-mat="A" data-row="1" data-col="3" data-nonzero="false"/>
+            <rect x="773" y="124" width="22" height="22" rx="7" ry="7" class="cell matrix-tile matrix-tile--zero" data-mat="A" data-row="1" data-col="4" data-nonzero="false"/>
+            <rect x="799" y="124" width="22" height="22" rx="7" ry="7" class="cell matrix-tile matrix-tile--nonzero" data-mat="A" data-row="1" data-col="5" data-nonzero="true"/>
+            <rect x="669" y="150" width="22" height="22" rx="7" ry="7" class="cell matrix-tile matrix-tile--zero" data-mat="A" data-row="2" data-col="0" data-nonzero="false"/>
+            <rect x="695" y="150" width="22" height="22" rx="7" ry="7" class="cell matrix-tile matrix-tile--nonzero" data-mat="A" data-row="2" data-col="1" data-nonzero="true"/>
+            <rect x="721" y="150" width="22" height="22" rx="7" ry="7" class="cell matrix-tile matrix-tile--zero" data-mat="A" data-row="2" data-col="2" data-nonzero="false"/>
+            <rect x="747" y="150" width="22" height="22" rx="7" ry="7" class="cell matrix-tile matrix-tile--zero" data-mat="A" data-row="2" data-col="3" data-nonzero="false"/>
+            <rect x="773" y="150" width="22" height="22" rx="7" ry="7" class="cell matrix-tile matrix-tile--zero" data-mat="A" data-row="2" data-col="4" data-nonzero="false"/>
+            <rect x="799" y="150" width="22" height="22" rx="7" ry="7" class="cell matrix-tile matrix-tile--zero" data-mat="A" data-row="2" data-col="5" data-nonzero="false"/>
+            <rect x="669" y="176" width="22" height="22" rx="7" ry="7" class="cell matrix-tile matrix-tile--zero" data-mat="A" data-row="3" data-col="0" data-nonzero="false"/>
+            <rect x="695" y="176" width="22" height="22" rx="7" ry="7" class="cell matrix-tile matrix-tile--zero" data-mat="A" data-row="3" data-col="1" data-nonzero="false"/>
+            <rect x="721" y="176" width="22" height="22" rx="7" ry="7" class="cell matrix-tile matrix-tile--nonzero" data-mat="A" data-row="3" data-col="2" data-nonzero="true"/>
+            <rect x="747" y="176" width="22" height="22" rx="7" ry="7" class="cell matrix-tile matrix-tile--zero" data-mat="A" data-row="3" data-col="3" data-nonzero="false"/>
+            <rect x="773" y="176" width="22" height="22" rx="7" ry="7" class="cell matrix-tile matrix-tile--zero" data-mat="A" data-row="3" data-col="4" data-nonzero="false"/>
+            <rect x="799" y="176" width="22" height="22" rx="7" ry="7" class="cell matrix-tile matrix-tile--zero" data-mat="A" data-row="3" data-col="5" data-nonzero="false"/>
+            <rect x="669" y="202" width="22" height="22" rx="7" ry="7" class="cell matrix-tile matrix-tile--zero" data-mat="A" data-row="4" data-col="0" data-nonzero="false"/>
+            <rect x="695" y="202" width="22" height="22" rx="7" ry="7" class="cell matrix-tile matrix-tile--zero" data-mat="A" data-row="4" data-col="1" data-nonzero="false"/>
+            <rect x="721" y="202" width="22" height="22" rx="7" ry="7" class="cell matrix-tile matrix-tile--zero" data-mat="A" data-row="4" data-col="2" data-nonzero="false"/>
+            <rect x="747" y="202" width="22" height="22" rx="7" ry="7" class="cell matrix-tile matrix-tile--nonzero" data-mat="A" data-row="4" data-col="3" data-nonzero="true"/>
+            <rect x="773" y="202" width="22" height="22" rx="7" ry="7" class="cell matrix-tile matrix-tile--zero" data-mat="A" data-row="4" data-col="4" data-nonzero="false"/>
+            <rect x="799" y="202" width="22" height="22" rx="7" ry="7" class="cell matrix-tile matrix-tile--zero" data-mat="A" data-row="4" data-col="5" data-nonzero="false"/>
+            <rect x="669" y="228" width="22" height="22" rx="7" ry="7" class="cell matrix-tile matrix-tile--zero" data-mat="A" data-row="5" data-col="0" data-nonzero="false"/>
+            <rect x="695" y="228" width="22" height="22" rx="7" ry="7" class="cell matrix-tile matrix-tile--zero" data-mat="A" data-row="5" data-col="1" data-nonzero="false"/>
+            <rect x="721" y="228" width="22" height="22" rx="7" ry="7" class="cell matrix-tile matrix-tile--zero" data-mat="A" data-row="5" data-col="2" data-nonzero="false"/>
+            <rect x="747" y="228" width="22" height="22" rx="7" ry="7" class="cell matrix-tile matrix-tile--zero" data-mat="A" data-row="5" data-col="3" data-nonzero="false"/>
+            <rect x="773" y="228" width="22" height="22" rx="7" ry="7" class="cell matrix-tile matrix-tile--nonzero" data-mat="A" data-row="5" data-col="4" data-nonzero="true"/>
+            <rect x="799" y="228" width="22" height="22" rx="7" ry="7" class="cell matrix-tile matrix-tile--nonzero" data-mat="A" data-row="5" data-col="5" data-nonzero="true"/>
+          </g>
+
+          <g data-matrix="B">
+            <rect x="899" y="98" width="22" height="22" rx="7" ry="7" class="cell matrix-tile matrix-tile--zero" data-mat="B" data-row="0" data-col="0" data-nonzero="false"/>
+            <rect x="925" y="98" width="22" height="22" rx="7" ry="7" class="cell matrix-tile matrix-tile--zero" data-mat="B" data-row="0" data-col="1" data-nonzero="false"/>
+            <rect x="951" y="98" width="22" height="22" rx="7" ry="7" class="cell matrix-tile matrix-tile--nonzero" data-mat="B" data-row="0" data-col="2" data-nonzero="true"/>
+            <rect x="977" y="98" width="22" height="22" rx="7" ry="7" class="cell matrix-tile matrix-tile--zero" data-mat="B" data-row="0" data-col="3" data-nonzero="false"/>
+            <rect x="1003" y="98" width="22" height="22" rx="7" ry="7" class="cell matrix-tile matrix-tile--zero" data-mat="B" data-row="0" data-col="4" data-nonzero="false"/>
+            <rect x="1029" y="98" width="22" height="22" rx="7" ry="7" class="cell matrix-tile matrix-tile--zero" data-mat="B" data-row="0" data-col="5" data-nonzero="false"/>
+            <rect x="899" y="124" width="22" height="22" rx="7" ry="7" class="cell matrix-tile matrix-tile--nonzero" data-mat="B" data-row="1" data-col="0" data-nonzero="true"/>
+            <rect x="925" y="124" width="22" height="22" rx="7" ry="7" class="cell matrix-tile matrix-tile--zero" data-mat="B" data-row="1" data-col="1" data-nonzero="false"/>
+            <rect x="951" y="124" width="22" height="22" rx="7" ry="7" class="cell matrix-tile matrix-tile--zero" data-mat="B" data-row="1" data-col="2" data-nonzero="false"/>
+            <rect x="977" y="124" width="22" height="22" rx="7" ry="7" class="cell matrix-tile matrix-tile--zero" data-mat="B" data-row="1" data-col="3" data-nonzero="false"/>
+            <rect x="1003" y="124" width="22" height="22" rx="7" ry="7" class="cell matrix-tile matrix-tile--nonzero" data-mat="B" data-row="1" data-col="4" data-nonzero="true"/>
+            <rect x="1029" y="124" width="22" height="22" rx="7" ry="7" class="cell matrix-tile matrix-tile--zero" data-mat="B" data-row="1" data-col="5" data-nonzero="false"/>
+            <rect x="899" y="150" width="22" height="22" rx="7" ry="7" class="cell matrix-tile matrix-tile--zero" data-mat="B" data-row="2" data-col="0" data-nonzero="false"/>
+            <rect x="925" y="150" width="22" height="22" rx="7" ry="7" class="cell matrix-tile matrix-tile--zero" data-mat="B" data-row="2" data-col="1" data-nonzero="false"/>
+            <rect x="951" y="150" width="22" height="22" rx="7" ry="7" class="cell matrix-tile matrix-tile--zero" data-mat="B" data-row="2" data-col="2" data-nonzero="false"/>
+            <rect x="977" y="150" width="22" height="22" rx="7" ry="7" class="cell matrix-tile matrix-tile--zero" data-mat="B" data-row="2" data-col="3" data-nonzero="false"/>
+            <rect x="1003" y="150" width="22" height="22" rx="7" ry="7" class="cell matrix-tile matrix-tile--zero" data-mat="B" data-row="2" data-col="4" data-nonzero="false"/>
+            <rect x="1029" y="150" width="22" height="22" rx="7" ry="7" class="cell matrix-tile matrix-tile--nonzero" data-mat="B" data-row="2" data-col="5" data-nonzero="true"/>
+            <rect x="899" y="176" width="22" height="22" rx="7" ry="7" class="cell matrix-tile matrix-tile--zero" data-mat="B" data-row="3" data-col="0" data-nonzero="false"/>
+            <rect x="925" y="176" width="22" height="22" rx="7" ry="7" class="cell matrix-tile matrix-tile--nonzero" data-mat="B" data-row="3" data-col="1" data-nonzero="true"/>
+            <rect x="951" y="176" width="22" height="22" rx="7" ry="7" class="cell matrix-tile matrix-tile--zero" data-mat="B" data-row="3" data-col="2" data-nonzero="false"/>
+            <rect x="977" y="176" width="22" height="22" rx="7" ry="7" class="cell matrix-tile matrix-tile--zero" data-mat="B" data-row="3" data-col="3" data-nonzero="false"/>
+            <rect x="1003" y="176" width="22" height="22" rx="7" ry="7" class="cell matrix-tile matrix-tile--zero" data-mat="B" data-row="3" data-col="4" data-nonzero="false"/>
+            <rect x="1029" y="176" width="22" height="22" rx="7" ry="7" class="cell matrix-tile matrix-tile--zero" data-mat="B" data-row="3" data-col="5" data-nonzero="false"/>
+            <rect x="899" y="202" width="22" height="22" rx="7" ry="7" class="cell matrix-tile matrix-tile--zero" data-mat="B" data-row="4" data-col="0" data-nonzero="false"/>
+            <rect x="925" y="202" width="22" height="22" rx="7" ry="7" class="cell matrix-tile matrix-tile--zero" data-mat="B" data-row="4" data-col="1" data-nonzero="false"/>
+            <rect x="951" y="202" width="22" height="22" rx="7" ry="7" class="cell matrix-tile matrix-tile--zero" data-mat="B" data-row="4" data-col="2" data-nonzero="false"/>
+            <rect x="977" y="202" width="22" height="22" rx="7" ry="7" class="cell matrix-tile matrix-tile--nonzero" data-mat="B" data-row="4" data-col="3" data-nonzero="true"/>
+            <rect x="1003" y="202" width="22" height="22" rx="7" ry="7" class="cell matrix-tile matrix-tile--zero" data-mat="B" data-row="4" data-col="4" data-nonzero="false"/>
+            <rect x="1029" y="202" width="22" height="22" rx="7" ry="7" class="cell matrix-tile matrix-tile--zero" data-mat="B" data-row="4" data-col="5" data-nonzero="false"/>
+            <rect x="899" y="228" width="22" height="22" rx="7" ry="7" class="cell matrix-tile matrix-tile--zero" data-mat="B" data-row="5" data-col="0" data-nonzero="false"/>
+            <rect x="925" y="228" width="22" height="22" rx="7" ry="7" class="cell matrix-tile matrix-tile--zero" data-mat="B" data-row="5" data-col="1" data-nonzero="false"/>
+            <rect x="951" y="228" width="22" height="22" rx="7" ry="7" class="cell matrix-tile matrix-tile--nonzero" data-mat="B" data-row="5" data-col="2" data-nonzero="true"/>
+            <rect x="977" y="228" width="22" height="22" rx="7" ry="7" class="cell matrix-tile matrix-tile--zero" data-mat="B" data-row="5" data-col="3" data-nonzero="false"/>
+            <rect x="1003" y="228" width="22" height="22" rx="7" ry="7" class="cell matrix-tile matrix-tile--zero" data-mat="B" data-row="5" data-col="4" data-nonzero="false"/>
+            <rect x="1029" y="228" width="22" height="22" rx="7" ry="7" class="cell matrix-tile matrix-tile--zero" data-mat="B" data-row="5" data-col="5" data-nonzero="false"/>
+          </g>
+
+          <text class="serif mlabel dense-residual" x="370" y="296" text-anchor="middle">W</text>
+          <text class="serif op" x="532.5" y="298" text-anchor="middle">&#8776;</text>
+          <text class="serif mlabel" x="745" y="296" text-anchor="middle">A</text>
+          <text class="serif op" x="860" y="298" text-anchor="middle">&#215;</text>
+          <text class="serif mlabel" x="975" y="296" text-anchor="middle">B</text>
+          <text class="sans rw" x="745" y="324" text-anchor="middle">read (A)</text>
+          <text class="sans rw" x="975" y="324" text-anchor="middle">write (B)</text>
+          <text class="sans start-note" x="370" y="324" text-anchor="middle">start: dense W</text>
+
+          <g class="dense dense-residual">
+            <line x1="280" y1="342" x2="460" y2="342"/><line x1="280" y1="342" x2="460" y2="376"/><line x1="280" y1="342" x2="460" y2="410"/><line x1="280" y1="342" x2="460" y2="444"/><line x1="280" y1="342" x2="460" y2="478"/><line x1="280" y1="342" x2="460" y2="512"/>
+            <line x1="280" y1="376" x2="460" y2="342"/><line x1="280" y1="376" x2="460" y2="376"/><line x1="280" y1="376" x2="460" y2="410"/><line x1="280" y1="376" x2="460" y2="444"/><line x1="280" y1="376" x2="460" y2="478"/><line x1="280" y1="376" x2="460" y2="512"/>
+            <line x1="280" y1="410" x2="460" y2="342"/><line x1="280" y1="410" x2="460" y2="376"/><line x1="280" y1="410" x2="460" y2="410"/><line x1="280" y1="410" x2="460" y2="444"/><line x1="280" y1="410" x2="460" y2="478"/><line x1="280" y1="410" x2="460" y2="512"/>
+            <line x1="280" y1="444" x2="460" y2="342"/><line x1="280" y1="444" x2="460" y2="376"/><line x1="280" y1="444" x2="460" y2="410"/><line x1="280" y1="444" x2="460" y2="444"/><line x1="280" y1="444" x2="460" y2="478"/><line x1="280" y1="444" x2="460" y2="512"/>
+            <line x1="280" y1="478" x2="460" y2="342"/><line x1="280" y1="478" x2="460" y2="376"/><line x1="280" y1="478" x2="460" y2="410"/><line x1="280" y1="478" x2="460" y2="444"/><line x1="280" y1="478" x2="460" y2="478"/><line x1="280" y1="478" x2="460" y2="512"/>
+            <line x1="280" y1="512" x2="460" y2="342"/><line x1="280" y1="512" x2="460" y2="376"/><line x1="280" y1="512" x2="460" y2="410"/><line x1="280" y1="512" x2="460" y2="444"/><line x1="280" y1="512" x2="460" y2="478"/><line x1="280" y1="512" x2="460" y2="512"/>
+          </g>
+          <g class="sparse">
+            <line x1="630" y1="342" x2="860" y2="342"/><line x1="630" y1="376" x2="860" y2="342"/><line x1="630" y1="410" x2="860" y2="376"/><line x1="630" y1="342" x2="860" y2="410"/><line x1="630" y1="444" x2="860" y2="410"/><line x1="630" y1="478" x2="860" y2="444"/><line x1="630" y1="512" x2="860" y2="478"/><line x1="630" y1="376" x2="860" y2="512"/><line x1="630" y1="512" x2="860" y2="512"/>
+            <line x1="860" y1="342" x2="1090" y2="410"/><line x1="860" y1="376" x2="1090" y2="342"/><line x1="860" y1="376" x2="1090" y2="478"/><line x1="860" y1="410" x2="1090" y2="512"/><line x1="860" y1="444" x2="1090" y2="376"/><line x1="860" y1="478" x2="1090" y2="444"/><line x1="860" y1="512" x2="1090" y2="410"/>
+          </g>
+          <g class="dense-residual">
+            <circle class="node" cx="280" cy="342" r="9"/><circle class="node" cx="280" cy="376" r="9"/><circle class="node" cx="280" cy="410" r="9"/><circle class="node" cx="280" cy="444" r="9"/><circle class="node" cx="280" cy="478" r="9"/><circle class="node" cx="280" cy="512" r="9"/>
+            <circle class="node" cx="460" cy="342" r="9"/><circle class="node" cx="460" cy="376" r="9"/><circle class="node" cx="460" cy="410" r="9"/><circle class="node" cx="460" cy="444" r="9"/><circle class="node" cx="460" cy="478" r="9"/><circle class="node" cx="460" cy="512" r="9"/>
+          </g>
+          <circle class="node" cx="630" cy="342" r="9"/><circle class="node" cx="630" cy="376" r="9"/><circle class="node" cx="630" cy="410" r="9"/><circle class="node" cx="630" cy="444" r="9"/><circle class="node" cx="630" cy="478" r="9"/><circle class="node" cx="630" cy="512" r="9"/>
+          <circle class="unit" cx="860" cy="342" r="11"/><circle class="unit" cx="860" cy="376" r="11"/><circle class="unit" cx="860" cy="410" r="11"/><circle class="unit" cx="860" cy="444" r="11"/><circle class="unit" cx="860" cy="478" r="11"/><circle class="unit" cx="860" cy="512" r="11"/>
+          <circle class="node" cx="1090" cy="342" r="9"/><circle class="node" cx="1090" cy="376" r="9"/><circle class="node" cx="1090" cy="410" r="9"/><circle class="node" cx="1090" cy="444" r="9"/><circle class="node" cx="1090" cy="478" r="9"/><circle class="node" cx="1090" cy="512" r="9"/>
+          <text class="sans small dense-residual" x="280" y="542" text-anchor="middle">inputs</text>
+          <text class="sans small dense-residual" x="460" y="542" text-anchor="middle">outputs</text>
+          <text class="sans small" x="630" y="542" text-anchor="middle">inputs</text>
+          <text class="sans small" x="860" y="542" text-anchor="middle">bottleneck units</text>
+          <text class="sans small" x="1090" y="542" text-anchor="middle">outputs</text>
+        </g>
+      </svg></div>
+  <div class="figure-tools" aria-label="Figure animation controls">
+      <p id="fig1-hint" class="figure-hint" role="note"><span class="figure-hint__key">Hover or tap</span> a bottleneck unit to trace its read&#8202;&#8594;&#8202;write path.</p>
+      <div class="figure-tools__buttons">
+        <button id="fig1-replay" class="replay-button" type="button" hidden>Replay</button>
+        <button id="fig1-replay-pruning" class="replay-button" type="button" hidden>Replay pruning</button>
+      </div>
+</div>
+<script>
+    (() => {
+      'use strict';
+
+      const SVG_NS = 'http://www.w3.org/2000/svg';
+      const SIZE = 6;
+      const CELL = 26;
+      const TILE = Object.freeze({ inset: 2, size: CELL - 4, radius: 7, strokeWidth: 1 });
+      const GRAPH_ROW0_Y = 342;
+      const GRAPH_ROW_STEP = 34;
+      const GRAPH_Y = Object.freeze(Array.from({ length: SIZE }, (_, index) => GRAPH_ROW0_Y + index * GRAPH_ROW_STEP));
+      const GRAPH_CAPTION_Y = GRAPH_Y[SIZE - 1] + 30;
+      const SELECTED_UNITS = Object.freeze([0, 2, 4]);
+      const HERO_TITLE = 'From dense weights to a sparse read/write circuit';
+      const DENSE_RESIDUAL_OPACITY = 0.24;
+
+      const FIGURE_MODEL = {
+        viewBox: { x: 138, y: -32, width: 1120, height: 596 },
+        colors: {
+          denseCell: '#C3D6EC',
+          nonzero: '#1B6F6A',
+          zero: '#eef2f2',
+          cellStroke: 'rgba(0,0,0,0.08)',
+          zeroStroke: 'rgba(0,0,0,0.04)',
+          denseEdge: '#c9c9c9',
+          sparseEdge: '#555',
+          nodeStroke: '#111'
+        },
+        matrices: {
+          W: { x: 292, y: 96, fill: 'dense' },
+          A: { x: 667, y: 96, fill: 'sparse' },
+          B: { x: 897, y: 96, fill: 'sparse' }
+        },
+        nodes: {
+          denseInputs: range(SIZE).map((i) => node('dense-input', i, 280, GRAPH_Y[i])),
+          denseOutputs: range(SIZE).map((k) => node('dense-output', k, 460, GRAPH_Y[k])),
+          inputs: range(SIZE).map((i) => node('input', i, 630, GRAPH_Y[i])),
+          units: range(SIZE).map((j) => node('unit', j, 860, GRAPH_Y[j])),
+          outputs: range(SIZE).map((k) => node('output', k, 1090, GRAPH_Y[k]))
+        },
+        support: {
+          A: [[0, 0], [1, 0], [2, 1], [0, 2], [3, 2], [4, 3], [5, 4], [1, 5], [5, 5]],
+          B: [[0, 2], [1, 0], [1, 4], [2, 5], [3, 1], [4, 3], [5, 2]]
+        },
+        pruning: {
+          selectedUnits: SELECTED_UNITS,
+          scores: Object.freeze([0.92, 0.34, 1.00, 0.48, 0.80, 0.18])
+        }
+      };
+
+      const SVG_STYLE = `
+        .sans{font-family:var(--default-font-family,"Avenir Next",Avenir,"Helvetica Neue",Helvetica,Arial,sans-serif);}
+        .serif{font-family:var(--blog-serif,Georgia,"Times New Roman",Times,serif);}
+        .title{font-size:21px;fill:#111;font-weight:700;}
+        .hero-eyebrow{font-size:13px;fill:#7a8590;font-weight:800;letter-spacing:1.1px;}
+        .hero-headline{font-size:30px;fill:#1c2530;font-weight:500;font-family:var(--blog-serif,Georgia,"Times New Roman",Times,serif);}
+        .hero-subhead{font-size:14px;fill:#5f6a74;}
+        .small{font-size:16px;fill:#5f5f5f;}
+        .start-note{font-size:18px;fill:#71808A;font-weight:600;letter-spacing:0.01em;}
+        .rw{font-size:18px;fill:#1B6F6A;font-weight:700;}
+        .mlabel{font-size:40px;fill:#111;font-family:var(--blog-serif,Georgia,"Times New Roman",Times,serif);}
+        .op{font-size:46px;fill:#111;font-family:var(--blog-serif,Georgia,"Times New Roman",Times,serif);}
+        .node{stroke:#111;stroke-width:1.6;fill:#fff;}
+        .unit{stroke:var(--c2-unit-stroke,#1B6F6A);stroke-width:var(--c2-unit-stroke-width,2.4);fill:var(--c2-unit-fill,#fff);cursor:pointer;transform-box:fill-box;transform-origin:center;}
+        .dense{stroke:#c9c9c9;stroke-width:1.0;fill:none;}
+        .sparse{stroke:#555;stroke-width:1.5;fill:none;}
+        .cell{stroke-width:1;}
+        .matrix-tile{transform-box:fill-box;transform-origin:center;}
+        .matrix-tile--dense{fill:#C3D6EC;stroke:rgba(0,0,0,0.08);}
+        .matrix-tile--nonzero{fill:#1B6F6A;stroke:rgba(0,0,0,0.08);}
+        .matrix-tile--zero{fill:#eef2f2;stroke:rgba(0,0,0,0.04);}
+        .dense-residual{opacity:0.24;}
+        .bg-wash{pointer-events:none;}
+        .nonzero-cell{transform-box:fill-box;transform-origin:center;}
+        .c1-overlay{pointer-events:none;}
+        .scene-part{transition:opacity 150ms ease,stroke 150ms ease,stroke-width 150ms ease,fill 150ms ease,transform 150ms ease;}
+        .is-dimmed{opacity:0.18;}
+        .is-active-path{opacity:1;stroke:#1B6F6A;stroke-width:3.2;}
+        .is-active-cell{opacity:1;stroke:#0d4b47;stroke-width:1.5;stroke-opacity:1;}
+        .is-active-node{opacity:1;stroke:#1B6F6A;stroke-width:2.2;}
+        .is-active-unit{opacity:1;fill:#1B6F6A;stroke:#1B6F6A;stroke-width:2.8;transform:scale(1.16);}
+        .unit:focus{outline:none;}
+        .unit:focus-visible{outline:2px solid #1B6F6A;outline-offset:3px;}
+        @media (prefers-reduced-motion: reduce){
+          .scene-part{transition:none;}
+        }
+      `;
+
+      const elementIndex = {
+        cells: { W: new Map(), A: new Map(), B: new Map() },
+        edges: { read: new Map(), write: new Map() },
+        nodes: new Map()
+      };
+
+      function range(count) {
+        return Array.from({ length: count }, (_, index) => index);
+      }
+
+      function node(kind, index, x, y) {
+        return { id: `${kind}-${index}`, kind, index, x, y };
+      }
+
+      function key(row, col) {
+        return `${row}:${col}`;
+      }
+
+      function svgEl(tagName, attrs = {}, text = null) {
+        const el = document.createElementNS(SVG_NS, tagName);
+        Object.entries(attrs).forEach(([name, value]) => {
+          if (value !== null && value !== undefined) {
+            el.setAttribute(name, String(value));
+          }
+        });
+        if (text !== null) el.textContent = text;
+        return el;
+      }
+
+      function append(parent, child) {
+        parent.appendChild(child);
+        return child;
+      }
+
+      function appendText(parent, attrs, text) {
+        return append(parent, svgEl('text', attrs, text));
+      }
+
+      function clearIndex() {
+        elementIndex.cells.W.clear();
+        elementIndex.cells.A.clear();
+        elementIndex.cells.B.clear();
+        elementIndex.edges.read.clear();
+        elementIndex.edges.write.clear();
+        elementIndex.nodes.clear();
+      }
+
+      function supportSet(entries) {
+        return new Set(entries.map(([row, col]) => key(row, col)));
+      }
+
+      function supportByUnit(entries, unitAxis) {
+        const grouped = range(SIZE).map(() => []);
+        entries.forEach(([row, col]) => {
+          const unit = unitAxis === 'col' ? col : row;
+          grouped[unit].push([row, col]);
+        });
+        return grouped;
+      }
+
+      function drawScene(svg, model) {
+        validateModel(model);
+        clearIndex();
+        svg.replaceChildren();
+        svg.setAttribute('viewBox', `${model.viewBox.x} ${model.viewBox.y} ${model.viewBox.width} ${model.viewBox.height}`);
+        svg.setAttribute('role', 'img');
+        svg.setAttribute('aria-labelledby', 'hero-fig1-title hero-fig1-desc');
+        svg.setAttribute('data-generated-from', 'FIGURE_MODEL');
+
+        append(svg, svgEl('title', { id: 'hero-fig1-title' }, HERO_TITLE));
+        append(svg, svgEl('desc', { id: 'hero-fig1-desc' }, 'A dense starting matrix fades into a residual while sparse A and B matrices and their bipartite read/write circuit become the protagonist.'));
+        append(svg, svgEl('style', {}, SVG_STYLE));
+        drawBackground(svg, model);
+        drawHeroTitle(svg);
+
+        const densePanel = append(svg, svgEl('g', {
+          id: 'fig1-dense-panel',
+          'data-panel': 'dense',
+          class: 'scene-part'
+        }));
+        drawDensePanel(densePanel, model);
+
+        const sparsePanel = append(svg, svgEl('g', {
+          id: 'fig1-sparse-panel',
+          'data-panel': 'sparse',
+          class: 'scene-part c1-panel-fade'
+        }));
+        drawSparsePanel(sparsePanel, model);
+        drawStartNote(svg);
+        setDenseResidual(svg, true);
+
+        verifyRenderedConsistency(svg, model);
+        attachInteractions(svg, model);
+      }
+
+      function drawBackground(svg, model) {
+        const defs = append(svg, svgEl('defs'));
+        appendRadialWash(defs, 'fig1-wash-teal', 1060, 100, 520, '#DDF5F0', 0.5, 0.18);
+        appendRadialWash(defs, 'fig1-wash-blue', 330, 150, 460, '#DDEBFA', 0.42, 0.14);
+        append(svg, svgEl('rect', {
+          x: model.viewBox.x,
+          y: model.viewBox.y,
+          width: model.viewBox.width,
+          height: model.viewBox.height,
+          fill: '#fff'
+        }));
+        append(svg, svgEl('rect', {
+          x: model.viewBox.x,
+          y: model.viewBox.y,
+          width: model.viewBox.width,
+          height: model.viewBox.height,
+          fill: 'url(#fig1-wash-teal)',
+          class: 'bg-wash'
+        }));
+        append(svg, svgEl('rect', {
+          x: model.viewBox.x,
+          y: model.viewBox.y,
+          width: model.viewBox.width,
+          height: model.viewBox.height,
+          fill: 'url(#fig1-wash-blue)',
+          class: 'bg-wash'
+        }));
+      }
+
+      function appendRadialWash(defs, id, cx, cy, r, color, innerOpacity, midOpacity) {
+        const gradient = append(defs, svgEl('radialGradient', {
+          id,
+          cx,
+          cy,
+          r,
+          gradientUnits: 'userSpaceOnUse'
+        }));
+        append(gradient, svgEl('stop', { offset: '0', 'stop-color': color, 'stop-opacity': innerOpacity }));
+        append(gradient, svgEl('stop', { offset: '0.5', 'stop-color': color, 'stop-opacity': midOpacity }));
+        append(gradient, svgEl('stop', { offset: '1', 'stop-color': color, 'stop-opacity': 0 }));
+      }
+
+      function drawHeroTitle(svg) {
+        appendText(svg, { class: 'sans hero-eyebrow', x: 240, y: -8, 'text-anchor': 'start' }, 'SPARSE WEIGHT DECOMPOSITION');
+        appendText(svg, { class: 'serif hero-headline', x: 238, y: 22, 'text-anchor': 'start' }, 'Dense weights become sparse read/write components');
+        appendText(svg, { class: 'sans hero-subhead', x: 240, y: 46, 'text-anchor': 'start' }, 'Selected bottleneck units carry task behavior through sparse input and output edges.');
+      }
+
+      function drawStartNote(svg) {
+        appendText(svg, { id: 'fig1-start-note', class: 'sans start-note scene-part', x: 370, y: 324, 'text-anchor': 'middle' }, 'start: dense W');
+      }
+
+      function drawDensePanel(parent, model) {
+        drawMatrix(parent, model, 'W');
+        appendText(parent, { class: 'serif mlabel', x: 370, y: 296, 'text-anchor': 'middle' }, 'W');
+        drawDenseGraph(parent, model);
+      }
+
+      function drawSparsePanel(parent, model) {
+        drawMatrix(parent, model, 'A');
+        drawMatrix(parent, model, 'B');
+        appendText(parent, { class: 'serif op', x: 532.5, y: 298, 'text-anchor': 'middle' }, '\u2248');
+        appendText(parent, { class: 'serif mlabel', x: 745, y: 296, 'text-anchor': 'middle' }, 'A');
+        appendText(parent, { class: 'serif op', x: 860, y: 298, 'text-anchor': 'middle' }, '\u00d7');
+        appendText(parent, { class: 'serif mlabel', x: 975, y: 296, 'text-anchor': 'middle' }, 'B');
+        appendText(parent, { class: 'sans rw', x: 745, y: 324, 'text-anchor': 'middle' }, 'read (A)');
+        appendText(parent, { class: 'sans rw', x: 975, y: 324, 'text-anchor': 'middle' }, 'write (B)');
+        drawSparseGraph(parent, model);
+      }
+
+      function drawMatrix(parent, model, name) {
+        const matrix = model.matrices[name];
+        const group = append(parent, svgEl('g', {
+          id: `fig1-matrix-${name}`,
+          'data-matrix': name
+        }));
+        const nonzero = name === 'W' ? new Set() : supportSet(model.support[name]);
+
+        range(SIZE).forEach((row) => {
+          range(SIZE).forEach((col) => {
+            const isDense = name === 'W';
+            const isNonzero = isDense || nonzero.has(key(row, col));
+            const tileKind = isDense ? 'dense' : (isNonzero ? 'nonzero' : 'zero');
+            const rect = append(group, svgEl('rect', {
+              id: `fig1-cell-${name}-${row}-${col}`,
+              ...matrixTileAttrs(matrix.x + col * CELL, matrix.y + row * CELL),
+              fill: matrixTileFill(model, tileKind),
+              stroke: matrixTileStroke(model, tileKind),
+              'stroke-width': TILE.strokeWidth,
+              class: `cell scene-part matrix-tile matrix-tile--${tileKind}${isNonzero && name !== 'W' ? ' nonzero-cell' : ''}`,
+              'data-mat': name,
+              'data-row': row,
+              'data-col': col,
+              'data-nonzero': isNonzero ? 'true' : 'false'
+            }));
+            elementIndex.cells[name].set(key(row, col), rect);
+          });
+        });
+      }
+
+      function matrixTileAttrs(cellX, cellY) {
+        return {
+          x: cellX + TILE.inset,
+          y: cellY + TILE.inset,
+          width: TILE.size,
+          height: TILE.size,
+          rx: TILE.radius,
+          ry: TILE.radius
+        };
+      }
+
+      function matrixTileFill(model, kind) {
+        if (kind === 'dense') return model.colors.denseCell;
+        if (kind === 'zero') return model.colors.zero;
+        return model.colors.nonzero;
+      }
+
+      function matrixTileStroke(model, kind) {
+        return kind === 'zero' ? model.colors.zeroStroke : model.colors.cellStroke;
+      }
+
+      function drawDenseGraph(parent, model) {
+        const edgeGroup = append(parent, svgEl('g', {
+          id: 'fig1-dense-edges',
+          class: 'dense'
+        }));
+
+        model.nodes.denseInputs.forEach((input) => {
+          model.nodes.denseOutputs.forEach((output) => {
+            append(edgeGroup, svgEl('line', {
+              x1: input.x,
+              y1: input.y,
+              x2: output.x,
+              y2: output.y,
+              'data-edge': 'dense',
+              'data-i': input.index,
+              'data-k': output.index
+            }));
+          });
+        });
+
+        model.nodes.denseInputs.forEach((item) => drawNode(parent, item, 'dense-input'));
+        model.nodes.denseOutputs.forEach((item) => drawNode(parent, item, 'dense-output'));
+        appendText(parent, { class: 'sans small', x: 280, y: GRAPH_CAPTION_Y, 'text-anchor': 'middle' }, 'inputs');
+        appendText(parent, { class: 'sans small', x: 460, y: GRAPH_CAPTION_Y, 'text-anchor': 'middle' }, 'outputs');
+      }
+
+      function drawSparseGraph(parent, model) {
+        const readGroup = append(parent, svgEl('g', {
+          id: 'fig1-read-edges',
+          class: 'sparse'
+        }));
+        const writeGroup = append(parent, svgEl('g', {
+          id: 'fig1-write-edges',
+          class: 'sparse'
+        }));
+
+        model.support.A.forEach(([i, j]) => {
+          const input = model.nodes.inputs[i];
+          const unit = model.nodes.units[j];
+          const edge = append(readGroup, svgEl('line', {
+            id: `fig1-edge-read-${i}-${j}`,
+            x1: input.x,
+            y1: input.y,
+            x2: unit.x,
+            y2: unit.y,
+            class: 'scene-part',
+            'data-edge': 'read',
+            'data-i': i,
+            'data-j': j,
+            'data-unit': j
+          }));
+          elementIndex.edges.read.set(key(i, j), edge);
+        });
+
+        model.support.B.forEach(([j, k]) => {
+          const unit = model.nodes.units[j];
+          const output = model.nodes.outputs[k];
+          const edge = append(writeGroup, svgEl('line', {
+            id: `fig1-edge-write-${j}-${k}`,
+            x1: unit.x,
+            y1: unit.y,
+            x2: output.x,
+            y2: output.y,
+            class: 'scene-part',
+            'data-edge': 'write',
+            'data-j': j,
+            'data-k': k,
+            'data-unit': j
+          }));
+          elementIndex.edges.write.set(key(j, k), edge);
+        });
+
+        model.nodes.inputs.forEach((item) => drawNode(parent, item, 'input'));
+        model.nodes.units.forEach((item) => drawNode(parent, item, 'unit'));
+        model.nodes.outputs.forEach((item) => drawNode(parent, item, 'output'));
+        appendText(parent, { class: 'sans small', x: 630, y: GRAPH_CAPTION_Y, 'text-anchor': 'middle' }, 'inputs');
+        appendText(parent, { class: 'sans small', x: 860, y: GRAPH_CAPTION_Y, 'text-anchor': 'middle' }, 'bottleneck units');
+        appendText(parent, { class: 'sans small', x: 1090, y: GRAPH_CAPTION_Y, 'text-anchor': 'middle' }, 'outputs');
+      }
+
+      function drawNode(parent, item, role) {
+        const attrs = {
+          id: `fig1-node-${role}-${item.index}`,
+          cx: item.x,
+          cy: item.y,
+          r: role === 'unit' ? 11 : 9,
+          class: role === 'unit' ? 'unit scene-part' : 'node scene-part',
+          'data-node': role,
+          'data-index': item.index
+        };
+
+        if (role === 'input') attrs['data-i'] = item.index;
+        if (role === 'output') attrs['data-k'] = item.index;
+        if (role === 'unit') {
+          attrs['data-unit'] = item.index;
+          attrs['data-j'] = item.index;
+          attrs.tabindex = 0;
+          attrs.focusable = 'true';
+          attrs.role = 'button';
+          attrs['aria-label'] = `bottleneck unit ${item.index + 1}`;
+        }
+
+        const circle = append(parent, svgEl('circle', attrs));
+        elementIndex.nodes.set(`${role}:${item.index}`, circle);
+      }
+
+      function attachInteractions(svg, model) {
+        let hoverUnit = null;
+        let focusUnit = null;
+
+        const update = () => {
+          const active = focusUnit !== null ? focusUnit : hoverUnit;
+          if (active === null) {
+            clearHighlight(svg);
+          } else {
+            highlightUnit(svg, model, active);
+          }
+        };
+
+        svg.querySelectorAll('[data-node="unit"]').forEach((unit) => {
+          const unitIndex = Number(unit.getAttribute('data-unit'));
+          unit.addEventListener('mouseenter', () => {
+            hoverUnit = unitIndex;
+            update();
+          });
+          unit.addEventListener('mouseleave', () => {
+            if (hoverUnit === unitIndex) hoverUnit = null;
+            update();
+          });
+          unit.addEventListener('focus', () => {
+            focusUnit = unitIndex;
+            update();
+          });
+          unit.addEventListener('blur', () => {
+            if (focusUnit === unitIndex) focusUnit = null;
+            update();
+          });
+        });
+      }
+
+      function highlightUnit(svg, model, unitIndex) {
+        clearHighlight(svg);
+        svg.setAttribute('data-active-unit', String(unitIndex));
+
+        svg.querySelector('[data-panel="dense"]').classList.add('is-dimmed');
+        svg.querySelectorAll('[data-edge="read"], [data-edge="write"], [data-node="input"], [data-node="unit"], [data-node="output"], [data-mat="A"], [data-mat="B"]').forEach((el) => {
+          el.classList.add('is-dimmed');
+        });
+
+        const readRows = model.support.A
+          .filter(([, j]) => j === unitIndex)
+          .map(([i]) => i);
+        const writeCols = model.support.B
+          .filter(([j]) => j === unitIndex)
+          .map(([, k]) => k);
+
+        svg.querySelectorAll(`[data-edge="read"][data-j="${unitIndex}"], [data-edge="write"][data-j="${unitIndex}"]`).forEach((el) => {
+          el.classList.remove('is-dimmed');
+          el.classList.add('is-active-path');
+        });
+
+        svg.querySelectorAll(`[data-mat="A"][data-col="${unitIndex}"][data-nonzero="true"], [data-mat="B"][data-row="${unitIndex}"][data-nonzero="true"]`).forEach((el) => {
+          el.classList.remove('is-dimmed');
+          el.classList.add('is-active-cell');
+        });
+
+        const activeUnit = svg.querySelector(`[data-node="unit"][data-unit="${unitIndex}"]`);
+        if (activeUnit) {
+          activeUnit.classList.remove('is-dimmed');
+          activeUnit.classList.add('is-active-unit');
+        }
+
+        readRows.forEach((i) => {
+          const nodeEl = svg.querySelector(`[data-node="input"][data-i="${i}"]`);
+          if (nodeEl) {
+            nodeEl.classList.remove('is-dimmed');
+            nodeEl.classList.add('is-active-node');
+          }
+        });
+
+        writeCols.forEach((k) => {
+          const nodeEl = svg.querySelector(`[data-node="output"][data-k="${k}"]`);
+          if (nodeEl) {
+            nodeEl.classList.remove('is-dimmed');
+            nodeEl.classList.add('is-active-node');
+          }
+        });
+      }
+
+      function clearHighlight(svg) {
+        svg.removeAttribute('data-active-unit');
+        svg.querySelectorAll('.is-dimmed, .is-active-path, .is-active-cell, .is-active-node, .is-active-unit').forEach((el) => {
+          el.classList.remove('is-dimmed', 'is-active-path', 'is-active-cell', 'is-active-node', 'is-active-unit');
+        });
+      }
+
+      function validateModel(model) {
+        ['A', 'B'].forEach((name) => {
+          model.support[name].forEach(([row, col]) => {
+            if (!Number.isInteger(row) || !Number.isInteger(col) || row < 0 || col < 0 || row >= SIZE || col >= SIZE) {
+              throw new Error(`${name} support index out of range: ${row},${col}`);
+            }
+          });
+        });
+
+        const aByUnit = supportByUnit(model.support.A, 'col');
+        const bByUnit = supportByUnit(model.support.B, 'row');
+        if (aByUnit.length !== model.nodes.units.length || bByUnit.length !== model.nodes.units.length) {
+          throw new Error('Support groups do not match bottleneck unit count.');
+        }
+
+        const selectedUnits = model.pruning.selectedUnits;
+        if (!Array.isArray(selectedUnits) || selectedUnits.length !== 3 || new Set(selectedUnits).size !== selectedUnits.length) {
+          throw new Error('SELECTED_UNITS must contain three unique bottleneck units.');
+        }
+        selectedUnits.forEach((unit) => {
+          if (!Number.isInteger(unit) || unit < 0 || unit >= SIZE) {
+            throw new Error(`SELECTED_UNITS index out of range: ${unit}`);
+          }
+          if (aByUnit[unit].length === 0 || bByUnit[unit].length === 0) {
+            throw new Error(`SELECTED_UNITS unit lacks a complete read/write path: ${unit}`);
+          }
+        });
+
+        const scores = model.pruning.scores;
+        if (!Array.isArray(scores) || scores.length !== SIZE || scores.some((score) => typeof score !== 'number' || !Number.isFinite(score) || score < 0 || score > 1)) {
+          throw new Error('FIGURE_MODEL.pruning.scores must contain one finite 0..1 score per unit.');
+        }
+        const topUnits = topScoringUnits(scores, selectedUnits.length).slice().sort((a, b) => a - b);
+        const selectedSorted = selectedUnits.slice().sort((a, b) => a - b);
+        if (!sameArray(topUnits, selectedSorted)) {
+          throw new Error(`pruning.scores top-${selectedUnits.length} must match SELECTED_UNITS.`);
+        }
+      }
+
+      function verifyRenderedConsistency(svg, model) {
+        const renderedACells = setFromElements(svg.querySelectorAll('[data-mat="A"][data-nonzero="true"]'), 'row', 'col');
+        const renderedBCells = setFromElements(svg.querySelectorAll('[data-mat="B"][data-nonzero="true"]'), 'row', 'col');
+        const renderedReadEdges = setFromElements(svg.querySelectorAll('[data-edge="read"]'), 'i', 'j');
+        const renderedWriteEdges = setFromElements(svg.querySelectorAll('[data-edge="write"]'), 'j', 'k');
+
+        assertSameSet(renderedACells, new Set(model.support.A.map(([i, j]) => key(i, j))), 'A cells/read edges');
+        assertSameSet(renderedBCells, new Set(model.support.B.map(([j, k]) => key(j, k))), 'B cells/write edges');
+        assertSameSet(renderedACells, renderedReadEdges, 'rendered A cells/read edges');
+        assertSameSet(renderedBCells, renderedWriteEdges, 'rendered B cells/write edges');
+      }
+
+      function setFromElements(elements, rowAttr, colAttr) {
+        return new Set(Array.from(elements, (el) => key(
+          Number(el.getAttribute(`data-${rowAttr}`)),
+          Number(el.getAttribute(`data-${colAttr}`))
+        )));
+      }
+
+      function assertSameSet(actual, expected, label) {
+        if (actual.size !== expected.size) {
+          throw new Error(`${label} mismatch: ${actual.size} vs ${expected.size}`);
+        }
+        expected.forEach((item) => {
+          if (!actual.has(item)) {
+            throw new Error(`${label} missing ${item}`);
+          }
+        });
+      }
+
+      function topScoringUnits(scores, count) {
+        return scores
+          .map((score, index) => ({ score, index }))
+          .sort((a, b) => b.score - a.score || a.index - b.index)
+          .slice(0, count)
+          .map(({ index }) => index);
+      }
+
+      function sameArray(a, b) {
+        return a.length === b.length && a.every((value, index) => value === b[index]);
+      }
+
+      const C1_TIMELINE = [
+        { name: 'dense-only', duration: 500 },
+        { name: 'copy-translate', duration: 900 },
+        { name: 'split-factorize', duration: 1350 },
+        { name: 'sparse-edge-draw', duration: 850 },
+        { name: 'settle-rest', duration: 150 }
+      ];
+
+      const C1_PHASE_BOUNDS = C1_TIMELINE.reduce((bounds, phase) => {
+        const start = bounds.total;
+        bounds[phase.name] = { start, end: start + phase.duration, duration: phase.duration };
+        bounds.total += phase.duration;
+        return bounds;
+      }, { total: 0 });
+
+      const C2_UNIT_SWEEP_MS = 600;
+      const C2_TIMELINE = [
+        { name: 'candidate-rest', duration: 180 },
+        ...range(SIZE).map((unitIndex) => ({
+          name: `sweep-unit-${unitIndex}`,
+          duration: C2_UNIT_SWEEP_MS,
+          unitIndex
+        })),
+        { name: 'fade-score-settle', duration: 260 }
+      ];
+
+      const C2_PHASE_BOUNDS = C2_TIMELINE.reduce((bounds, phase) => {
+        const start = bounds.total;
+        bounds[phase.name] = { start, end: start + phase.duration, duration: phase.duration };
+        bounds.total += phase.duration;
+        return bounds;
+      }, { total: 0 });
+
+      const C2_STYLE = {
+        teal: '#1B6F6A',
+        edgeBase: '#555555',
+        ghost: '#9ca4a2',
+        ghostMark: '#7b8380',
+        scoreFill: '#CFE1FF',
+        scoreStroke: '#365C9A',
+        selectedUnitRadius: 12.6,
+        ghostUnitRadius: 10.2,
+        selectedEdgeWidth: 3.2,
+        ghostEdgeWidth: 1.0,
+        selectedUnitStroke: 3.0,
+        ghostUnitStroke: 1.4,
+        ghostUnitOpacity: 0.22,
+        ghostEdgeOpacity: 0.2,
+        barX: 884,
+        barMaxWidth: 230,
+        barHeight: 12,
+        markPad: 18
+      };
+
+      const C1_GEOMETRY = {
+        cloneMatrixX: 782,
+        cloneMatrixDx: 490,
+        cloneGraphDx: 490,
+        cloneGraphInputX: 770,
+        cloneGraphOutputX: 950
+      };
+
+      function createC1Controller(svg, model) {
+        const reduceMotion = window.matchMedia
+          ? window.matchMedia('(prefers-reduced-motion: reduce)')
+          : { matches: false };
+        const replayButton = document.getElementById('fig1-replay');
+        const replayPruningButton = document.getElementById('fig1-replay-pruning');
+        let runToken = 0;
+        let autoPlayed = false;
+        let observer = null;
+
+        async function playFactorizeAnimation() {
+          const token = ++runToken;
+          return runFactorizeAnimation(token);
+        }
+
+        async function playPruneAnimation() {
+          const token = ++runToken;
+          hideHint();
+          const result = await runPruneAnimation(token);
+          if ((result === 'complete' || result === 'reduced-motion') && token === runToken) showHint();
+          return result;
+        }
+
+        const hintEl = document.getElementById('fig1-hint');
+        const showHint = () => { if (hintEl) hintEl.classList.add('is-visible'); };
+        const hideHint = () => { if (hintEl) hintEl.classList.remove('is-visible'); };
+
+        async function playFullSequence() {
+          const token = ++runToken;
+          hideHint();
+          const factorizeResult = await runFactorizeAnimation(token);
+          if (factorizeResult !== 'complete') {
+            if (factorizeResult === 'reduced-motion' && token === runToken) showHint();
+            return factorizeResult;
+          }
+          const pruneResult = await runPruneAnimation(token);
+          if ((pruneResult === 'complete' || pruneResult === 'reduced-motion') && token === runToken) showHint();
+          return pruneResult;
+        }
+
+        async function runFactorizeAnimation(token) {
+          resetC2Scene(svg);
+          resetC1Scene(svg);
+          if (reduceMotion.matches) {
+            settleC1Rest(svg);
+            return 'reduced-motion';
+          }
+
+          const state = prepareC1Overlay(svg, model);
+          renderC1At(svg, model, state, 0);
+          await nextPaint();
+
+          // A newer replay owns the shared SVG; cancelled runs must not reset its scene.
+          let elapsed = 0;
+          for (const phase of C1_TIMELINE) {
+            if (token !== runToken) {
+              return 'cancelled';
+            }
+            svg.setAttribute('data-c1-phase', phase.name);
+            const result = await animateC1Range(svg, model, state, elapsed, elapsed + phase.duration, phase.duration, () => token !== runToken);
+            if (result === 'cancelled') {
+              return 'cancelled';
+            }
+            elapsed += phase.duration;
+          }
+
+          if (token !== runToken) {
+            return 'cancelled';
+          }
+
+          settleC1Rest(svg);
+          return 'complete';
+        }
+
+        async function runPruneAnimation(token) {
+          settleC1Rest(svg);
+          resetC2Scene(svg);
+          if (reduceMotion.matches) {
+            return 'reduced-motion';
+          }
+
+          svg.classList.add('c2-animating');
+          renderC2At(svg, model, 0);
+          await nextPaint();
+
+          let elapsed = 0;
+          for (const phase of C2_TIMELINE) {
+            if (token !== runToken) {
+              return 'cancelled';
+            }
+            svg.setAttribute('data-c2-phase', phase.name);
+            const result = await animateC2Range(svg, model, elapsed, elapsed + phase.duration, phase.duration, () => token !== runToken);
+            if (result === 'cancelled') {
+              return 'cancelled';
+            }
+            elapsed += phase.duration;
+          }
+
+          if (token !== runToken) {
+            return 'cancelled';
+          }
+
+          settleC2Circuit(svg, model);
+          return 'complete';
+        }
+
+        const startOnce = () => {
+          if (autoPlayed || reduceMotion.matches) {
+            if (reduceMotion.matches) {
+              settleC1Rest(svg);
+              resetC2Scene(svg);
+            }
+            return;
+          }
+          autoPlayed = true;
+          window.setTimeout(() => {
+            playFullSequence();
+          }, 120);
+          if (observer) observer.disconnect();
+        };
+
+        if (replayButton) {
+          replayButton.hidden = false;
+          replayButton.addEventListener('click', () => {
+            autoPlayed = true;
+            playFullSequence();
+          });
+        }
+
+        if (replayPruningButton) {
+          replayPruningButton.hidden = false;
+          replayPruningButton.addEventListener('click', () => {
+            autoPlayed = true;
+            playPruneAnimation();
+          });
+        }
+
+        if (reduceMotion.matches) {
+          settleC1Rest(svg);
+          resetC2Scene(svg);
+          showHint();
+        } else if ('IntersectionObserver' in window) {
+          observer = new IntersectionObserver((entries) => {
+            if (entries.some((entry) => entry.isIntersecting && entry.intersectionRatio >= 0.35)) {
+              startOnce();
+            }
+          }, { threshold: [0, 0.35, 1] });
+          observer.observe(svg);
+          requestFrame(() => {
+            if (isVisibleEnough(svg, 0.35)) startOnce();
+          });
+        } else {
+          window.setTimeout(startOnce, 180);
+        }
+
+        return {
+          playFactorizeAnimation,
+          playPruneAnimation,
+          playFullSequence,
+          timeline: C1_TIMELINE.map(({ name, duration }) => ({ name, duration })),
+          c2Timeline: C2_TIMELINE.map(({ name, duration }) => ({ name, duration }))
+        };
+      }
+
+      function prepareC1Overlay(svg, model) {
+        clearHighlight(svg);
+        resetC1Scene(svg);
+        setDenseResidual(svg, false);
+        svg.classList.add('c1-animating');
+
+        const sparsePanel = svg.querySelector('#fig1-sparse-panel');
+        if (sparsePanel) {
+          sparsePanel.style.opacity = '0';
+          sparsePanel.style.pointerEvents = 'none';
+          sparsePanel.style.transition = 'none';
+        }
+
+        const overlay = append(svg, svgEl('g', {
+          id: 'fig1-c1-overlay',
+          class: 'c1-overlay',
+          'aria-hidden': 'true'
+        }));
+
+        const state = {
+          overlay,
+          sparsePanel,
+          labelGroup: null,
+          cloneMatrix: null,
+          cloneGraph: null,
+          splitMatrices: null,
+          matrixCells: { A: [], B: [] },
+          cleaveLine: null,
+          morphDenseEdges: [],
+          morphInputs: [],
+          morphOutputs: [],
+          morphUnits: [],
+          morphLabels: [],
+          readEdges: [],
+          writeEdges: []
+        };
+
+        state.cloneMatrix = append(overlay, svgEl('g', { opacity: 0 }));
+        drawC1DenseMatrix(state.cloneMatrix, model.matrices.W.x, model.matrices.W.y, model);
+
+        state.cloneGraph = append(overlay, svgEl('g', { opacity: 0 }));
+        drawC1DenseGraphClone(state.cloneGraph, model);
+
+        state.splitMatrices = append(overlay, svgEl('g', { opacity: 0 }));
+        state.matrixCells.A = drawC1SplitMatrix(state.splitMatrices, model, 'A');
+        state.matrixCells.B = drawC1SplitMatrix(state.splitMatrices, model, 'B');
+        state.cleaveLine = append(state.splitMatrices, svgEl('line', {
+          x1: C1_GEOMETRY.cloneMatrixX + (SIZE * CELL) / 2,
+          y1: model.matrices.W.y,
+          x2: C1_GEOMETRY.cloneMatrixX + (SIZE * CELL) / 2,
+          y2: model.matrices.W.y + SIZE * CELL,
+          stroke: model.colors.nonzero,
+          'stroke-width': 2,
+          opacity: 0
+        }));
+
+        state.morphGraph = append(overlay, svgEl('g', { opacity: 0 }));
+        drawC1MorphGraph(state.morphGraph, model, state);
+
+        state.labelGroup = append(overlay, svgEl('g', { opacity: 0 }));
+        appendText(state.labelGroup, { class: 'serif op', x: 532.5, y: 298, 'text-anchor': 'middle' }, '\u2248');
+        appendText(state.labelGroup, { class: 'serif mlabel', x: 745, y: 296, 'text-anchor': 'middle' }, 'A');
+        appendText(state.labelGroup, { class: 'serif op', x: 860, y: 298, 'text-anchor': 'middle' }, '\u00d7');
+        appendText(state.labelGroup, { class: 'serif mlabel', x: 975, y: 296, 'text-anchor': 'middle' }, 'B');
+        appendText(state.labelGroup, { class: 'sans rw', x: 745, y: 324, 'text-anchor': 'middle' }, 'read (A)');
+        appendText(state.labelGroup, { class: 'sans rw', x: 975, y: 324, 'text-anchor': 'middle' }, 'write (B)');
+
+        return state;
+      }
+
+      function drawC1DenseMatrix(parent, x, y, model) {
+        range(SIZE).forEach((row) => {
+          range(SIZE).forEach((col) => {
+            append(parent, svgEl('rect', {
+              ...matrixTileAttrs(x + col * CELL, y + row * CELL),
+              fill: model.colors.denseCell,
+              stroke: model.colors.cellStroke,
+              'stroke-width': TILE.strokeWidth,
+              class: 'cell matrix-tile matrix-tile--dense'
+            }));
+          });
+        });
+      }
+
+      function drawC1DenseGraphClone(parent, model) {
+        const edgeGroup = append(parent, svgEl('g', { class: 'dense' }));
+        model.nodes.denseInputs.forEach((input) => {
+          model.nodes.denseOutputs.forEach((output) => {
+            append(edgeGroup, svgEl('line', {
+              x1: input.x,
+              y1: input.y,
+              x2: output.x,
+              y2: output.y
+            }));
+          });
+        });
+
+        model.nodes.denseInputs.forEach((item) => append(parent, svgEl('circle', {
+          class: 'node',
+          cx: item.x,
+          cy: item.y,
+          r: 9
+        })));
+        model.nodes.denseOutputs.forEach((item) => append(parent, svgEl('circle', {
+          class: 'node',
+          cx: item.x,
+          cy: item.y,
+          r: 9
+        })));
+        appendText(parent, { class: 'sans small', x: 280, y: GRAPH_CAPTION_Y, 'text-anchor': 'middle' }, 'inputs');
+        appendText(parent, { class: 'sans small', x: 460, y: GRAPH_CAPTION_Y, 'text-anchor': 'middle' }, 'outputs');
+      }
+
+      function drawC1SplitMatrix(parent, model, name) {
+        const cells = [];
+        const group = append(parent, svgEl('g', { 'data-c1-split-matrix': name }));
+        range(SIZE).forEach((row) => {
+          range(SIZE).forEach((col) => {
+            const rect = append(group, svgEl('rect', {
+              ...matrixTileAttrs(col * CELL, row * CELL),
+              fill: model.colors.denseCell,
+              stroke: model.colors.cellStroke,
+              'stroke-width': TILE.strokeWidth,
+              class: 'cell matrix-tile matrix-tile--dense c1-split-cell'
+            }));
+            cells.push({ row, col, rect });
+          });
+        });
+        return cells;
+      }
+
+      function drawC1MorphGraph(parent, model, state) {
+        const denseEdges = append(parent, svgEl('g', { class: 'dense' }));
+        range(SIZE).forEach((i) => {
+          range(SIZE).forEach((k) => {
+            const edge = append(denseEdges, svgEl('line', {
+              x1: C1_GEOMETRY.cloneGraphInputX,
+              y1: GRAPH_Y[i],
+              x2: C1_GEOMETRY.cloneGraphOutputX,
+              y2: GRAPH_Y[k],
+              opacity: 1
+            }));
+            state.morphDenseEdges.push({ edge, i, k });
+          });
+        });
+
+        const readGroup = append(parent, svgEl('g', { class: 'sparse' }));
+        model.support.A.forEach(([i, j]) => {
+          const input = model.nodes.inputs[i];
+          const unit = model.nodes.units[j];
+          const edge = append(readGroup, svgEl('line', {
+            x1: input.x,
+            y1: input.y,
+            x2: unit.x,
+            y2: unit.y,
+            opacity: 0
+          }));
+          const length = lineDistance(input.x, input.y, unit.x, unit.y);
+          edge.setAttribute('stroke-dasharray', formatNumber(length));
+          edge.setAttribute('stroke-dashoffset', formatNumber(length));
+          state.readEdges.push({ edge, length });
+        });
+
+        const writeGroup = append(parent, svgEl('g', { class: 'sparse' }));
+        model.support.B.forEach(([j, k]) => {
+          const unit = model.nodes.units[j];
+          const output = model.nodes.outputs[k];
+          const edge = append(writeGroup, svgEl('line', {
+            x1: unit.x,
+            y1: unit.y,
+            x2: output.x,
+            y2: output.y,
+            opacity: 0
+          }));
+          const length = lineDistance(unit.x, unit.y, output.x, output.y);
+          edge.setAttribute('stroke-dasharray', formatNumber(length));
+          edge.setAttribute('stroke-dashoffset', formatNumber(length));
+          state.writeEdges.push({ edge, length });
+        });
+
+        GRAPH_Y.forEach((y) => {
+          state.morphInputs.push(append(parent, svgEl('circle', {
+            class: 'node',
+            cx: C1_GEOMETRY.cloneGraphInputX,
+            cy: y,
+            r: 9,
+            opacity: 0
+          })));
+          state.morphOutputs.push(append(parent, svgEl('circle', {
+            class: 'node',
+            cx: C1_GEOMETRY.cloneGraphOutputX,
+            cy: y,
+            r: 9,
+            opacity: 0
+          })));
+          state.morphUnits.push(append(parent, svgEl('circle', {
+            class: 'unit',
+            cx: 860,
+            cy: y,
+            r: 2,
+            opacity: 0
+          })));
+        });
+
+        state.morphLabels.push(appendText(parent, { class: 'sans small', x: 630, y: GRAPH_CAPTION_Y, 'text-anchor': 'middle', opacity: 0 }, 'inputs'));
+        state.morphLabels.push(appendText(parent, { class: 'sans small', x: 860, y: GRAPH_CAPTION_Y, 'text-anchor': 'middle', opacity: 0 }, 'bottleneck units'));
+        state.morphLabels.push(appendText(parent, { class: 'sans small', x: 1090, y: GRAPH_CAPTION_Y, 'text-anchor': 'middle', opacity: 0 }, 'outputs'));
+      }
+
+      function animateC1Range(svg, model, state, startMs, endMs, duration, isCancelled) {
+        return new Promise((resolve) => {
+          const startedAt = performance.now ? performance.now() : Date.now();
+
+          const tick = (nowValue) => {
+            if (isCancelled()) {
+              resolve('cancelled');
+              return;
+            }
+
+            const now = typeof nowValue === 'number' ? nowValue : Date.now();
+            const raw = duration <= 0 ? 1 : clamp((now - startedAt) / duration, 0, 1);
+            const timeMs = startMs + (endMs - startMs) * raw;
+            renderC1At(svg, model, state, timeMs);
+
+            if (raw < 1) {
+              requestFrame(tick);
+            } else {
+              resolve('complete');
+            }
+          };
+
+          requestFrame(tick);
+        });
+      }
+
+      function renderC1At(svg, model, state, timeMs) {
+        const copy = phaseProgress(timeMs, 'copy-translate');
+        const split = phaseProgress(timeMs, 'split-factorize');
+        const edges = phaseProgress(timeMs, 'sparse-edge-draw');
+        const settle = phaseProgress(timeMs, 'settle-rest');
+        const hasSplitStarted = timeMs >= C1_PHASE_BOUNDS['split-factorize'].start;
+        const hasEdgesStarted = timeMs >= C1_PHASE_BOUNDS['sparse-edge-draw'].start;
+
+        const settleFade = easeInOut(settle);
+        if (state.sparsePanel) state.sparsePanel.style.opacity = formatNumber(settleFade);
+        setOpacity(state.overlay, 1 - settleFade);
+        setDenseResidualProgress(svg, settleFade);
+
+        const cloneOpacityIn = easeInOut(clamp(copy / 0.18));
+        const cloneOpacityOut = hasSplitStarted ? 1 - easeInOut(clamp(split / 0.28)) : 1;
+        const cloneOpacity = copy > 0 || hasSplitStarted ? cloneOpacityIn * cloneOpacityOut : 0;
+        const cloneTranslate = lerp(0, C1_GEOMETRY.cloneMatrixDx, easeInOut(copy));
+        setOpacity(state.cloneMatrix, cloneOpacity);
+        setTransform(state.cloneMatrix, `translate(${formatNumber(cloneTranslate)} 0)`);
+        setOpacity(state.cloneGraph, cloneOpacity);
+        setTransform(state.cloneGraph, `translate(${formatNumber(lerp(0, C1_GEOMETRY.cloneGraphDx, easeInOut(copy)))} 0)`);
+
+        const splitVisible = hasSplitStarted || hasEdgesStarted ? 1 : 0;
+        setOpacity(state.splitMatrices, splitVisible);
+        const splitMotion = hasEdgesStarted ? 1 : easeInOut(clamp(split / 0.78));
+        const recolor = hasEdgesStarted ? 1 : easeInOut(clamp((split - 0.14) / 0.66));
+        setTransformForSplitMatrix(state.splitMatrices.querySelector('[data-c1-split-matrix="A"]'), lerp(C1_GEOMETRY.cloneMatrixX, model.matrices.A.x, splitMotion), model.matrices.A.y);
+        setTransformForSplitMatrix(state.splitMatrices.querySelector('[data-c1-split-matrix="B"]'), lerp(C1_GEOMETRY.cloneMatrixX, model.matrices.B.x, splitMotion), model.matrices.B.y);
+        updateSplitMatrixFills(state.matrixCells.A, model, 'A', recolor);
+        updateSplitMatrixFills(state.matrixCells.B, model, 'B', recolor);
+        setOpacity(state.cleaveLine, hasSplitStarted && !hasEdgesStarted ? Math.sin(Math.PI * clamp(split)) * 0.72 : 0);
+
+        const morphOpacity = hasSplitStarted || hasEdgesStarted ? 1 : 0;
+        setOpacity(state.morphGraph, morphOpacity);
+        const graphMotion = hasEdgesStarted ? 1 : easeInOut(clamp(split / 0.82));
+        const inputX = lerp(C1_GEOMETRY.cloneGraphInputX, model.nodes.inputs[0].x, graphMotion);
+        const outputX = lerp(C1_GEOMETRY.cloneGraphOutputX, model.nodes.outputs[0].x, graphMotion);
+        const denseEdgeOpacity = hasEdgesStarted ? 0 : 1 - easeInOut(clamp((split - 0.16) / 0.52));
+        state.morphDenseEdges.forEach(({ edge, i, k }) => {
+          setLine(edge, inputX, GRAPH_Y[i], outputX, GRAPH_Y[k]);
+          setOpacity(edge, 0.88 * denseEdgeOpacity);
+        });
+        state.morphInputs.forEach((nodeEl) => {
+          nodeEl.setAttribute('cx', formatNumber(inputX));
+          setOpacity(nodeEl, morphOpacity);
+        });
+        state.morphOutputs.forEach((nodeEl) => {
+          nodeEl.setAttribute('cx', formatNumber(outputX));
+          setOpacity(nodeEl, morphOpacity);
+        });
+        const unitGrow = hasEdgesStarted ? 1 : easeOut(clamp((split - 0.22) / 0.48));
+        state.morphUnits.forEach((unit) => {
+          unit.setAttribute('r', formatNumber(lerp(2, 11, unitGrow)));
+          setOpacity(unit, unitGrow);
+        });
+
+        const labelOpacity = hasEdgesStarted ? 1 : easeInOut(clamp((split - 0.34) / 0.46));
+        setOpacity(state.labelGroup, labelOpacity);
+        state.morphLabels.forEach((label) => setOpacity(label, labelOpacity));
+
+        renderDrawnEdges(state.readEdges, edges, 0, 0.58, 0.036);
+        renderDrawnEdges(state.writeEdges, edges, 0.34, 0.62, 0.048);
+      }
+
+      function setTransformForSplitMatrix(group, x, y) {
+        if (group) setTransform(group, `translate(${formatNumber(x)} ${formatNumber(y)})`);
+      }
+
+      function updateSplitMatrixFills(cells, model, name, progress) {
+        const support = supportSet(model.support[name]);
+        cells.forEach(({ row, col, rect }) => {
+          const isNonzero = support.has(key(row, col));
+          const target = isNonzero ? model.colors.nonzero : model.colors.zero;
+          const reveal = easeOut(clamp((progress - 0.06) / 0.94));
+          rect.setAttribute('stroke-width', TILE.strokeWidth);
+          rect.setAttribute('class', `cell matrix-tile matrix-tile--${isNonzero ? 'nonzero' : 'zero'} c1-split-cell`);
+          if (progress >= 1) {
+            rect.style.removeProperty('fill');
+            rect.style.removeProperty('stroke');
+            rect.style.removeProperty('opacity');
+            rect.style.removeProperty('transform');
+          } else {
+            rect.style.fill = mixHex(model.colors.denseCell, target, progress);
+            rect.style.stroke = isNonzero ? model.colors.cellStroke : model.colors.zeroStroke;
+            rect.style.opacity = formatNumber(lerp(0.72, 1, reveal));
+            rect.style.transform = `scale(${formatNumber(lerp(0.9, 1, reveal))})`;
+          }
+          removeEmptyStyle(rect);
+        });
+      }
+
+      function renderDrawnEdges(edges, progress, start, span, stagger) {
+        edges.forEach(({ edge, length }, index) => {
+          const draw = easeInOut(clamp((progress - start - index * stagger) / span));
+          setOpacity(edge, draw > 0 ? 1 : 0);
+          edge.setAttribute('stroke-dashoffset', formatNumber(length * (1 - draw)));
+        });
+      }
+
+      function settleC1Rest(svg) {
+        clearHighlight(svg);
+        resetC1Scene(svg);
+        setDenseResidual(svg, true);
+      }
+
+      function resetC1Scene(svg) {
+        const overlay = svg.querySelector('#fig1-c1-overlay');
+        if (overlay) overlay.remove();
+        const sparsePanel = svg.querySelector('#fig1-sparse-panel');
+        if (sparsePanel) {
+          sparsePanel.style.opacity = '';
+          sparsePanel.style.pointerEvents = '';
+          sparsePanel.style.transition = '';
+          removeEmptyStyle(sparsePanel);
+        }
+        svg.classList.remove('c1-animating');
+        svg.removeAttribute('data-c1-phase');
+      }
+
+      function setDenseResidual(svg, residual) {
+        setDenseResidualProgress(svg, residual ? 1 : 0);
+      }
+
+      function setDenseResidualProgress(svg, progress) {
+        const eased = clamp(progress);
+        const densePanel = svg.querySelector('#fig1-dense-panel');
+        const startNote = svg.querySelector('#fig1-start-note');
+        setOpacity(densePanel, lerp(1, DENSE_RESIDUAL_OPACITY, eased));
+        setOpacity(startNote, eased);
+      }
+
+      function animateC2Range(svg, model, startMs, endMs, duration, isCancelled) {
+        return new Promise((resolve) => {
+          const startedAt = performance.now ? performance.now() : Date.now();
+
+          const tick = (nowValue) => {
+            if (isCancelled()) {
+              resolve('cancelled');
+              return;
+            }
+
+            const now = typeof nowValue === 'number' ? nowValue : Date.now();
+            const raw = duration <= 0 ? 1 : clamp((now - startedAt) / duration, 0, 1);
+            const timeMs = startMs + (endMs - startMs) * raw;
+            renderC2At(svg, model, timeMs);
+
+            if (raw < 1) {
+              requestFrame(tick);
+            } else {
+              resolve('complete');
+            }
+          };
+
+          requestFrame(tick);
+        });
+      }
+
+      function renderC2At(svg, model, timeMs) {
+        const sweep = c2SweepState(timeMs);
+        const selectedUnits = model.pruning.selectedUnits;
+
+        clearHighlight(svg);
+
+        if (sweep.mode === 'candidate') {
+          svg.setAttribute('data-c2-state', 'candidate-rest');
+          clearC2GraphStyles(svg);
+          removeC2Overlay(svg);
+          return;
+        }
+
+        if (sweep.mode === 'sweep') {
+          svg.setAttribute('data-c2-state', `sweep-unit-${sweep.currentUnit}`);
+          highlightUnit(svg, model, sweep.currentUnit);
+        } else {
+          svg.setAttribute('data-c2-state', 'pruned-circuit');
+        }
+
+        model.nodes.units.forEach((unitNode) => {
+          const unitEl = svg.querySelector(`[data-node="unit"][data-unit="${unitNode.index}"]`);
+          if (!unitEl) return;
+          const selected = selectedUnits.includes(unitNode.index);
+          renderC2Unit(unitEl, selected, c2ResolutionProgress(sweep, unitNode.index));
+        });
+
+        svg.querySelectorAll('[data-edge="read"], [data-edge="write"]').forEach((edge) => {
+          const unit = Number(edge.getAttribute('data-unit'));
+          renderC2Edge(edge, selectedUnits.includes(unit), c2ResolutionProgress(sweep, unit));
+        });
+
+        renderC2ScoreOverlay(svg, model, sweep);
+      }
+
+      function c2SweepState(timeMs) {
+        if (timeMs < C2_PHASE_BOUNDS['candidate-rest'].end) {
+          return { mode: 'candidate', currentUnit: null, local: 0, settle: 0 };
+        }
+
+        for (const phase of C2_TIMELINE) {
+          if (!phase.name.startsWith('sweep-unit-')) continue;
+          const bounds = C2_PHASE_BOUNDS[phase.name];
+          if (timeMs < bounds.end) {
+            return {
+              mode: 'sweep',
+              currentUnit: phase.unitIndex,
+              local: clamp((timeMs - bounds.start) / bounds.duration),
+              settle: 0
+            };
+          }
+        }
+
+        return {
+          mode: 'settle',
+          currentUnit: null,
+          local: 1,
+          settle: c2PhaseProgress(timeMs, 'fade-score-settle')
+        };
+      }
+
+      function c2ResolutionProgress(sweep, unitIndex) {
+        if (sweep.mode === 'settle') return 1;
+        if (sweep.mode !== 'sweep') return 0;
+        if (unitIndex < sweep.currentUnit) return 1;
+        if (unitIndex > sweep.currentUnit) return 0;
+        return easeInOut(clamp((sweep.local - 0.64) / 0.26));
+      }
+
+      function renderC2Unit(unitEl, selected, progress) {
+        if (progress <= 0) {
+          clearC2UnitStyles(unitEl);
+          return;
+        }
+
+        const targetRadius = selected ? C2_STYLE.selectedUnitRadius : C2_STYLE.ghostUnitRadius;
+        const targetFill = selected ? C2_STYLE.teal : '#ffffff';
+        const targetStroke = selected ? C2_STYLE.teal : C2_STYLE.ghost;
+        const targetStrokeWidth = selected ? C2_STYLE.selectedUnitStroke : C2_STYLE.ghostUnitStroke;
+        const targetOpacity = selected ? 1 : C2_STYLE.ghostUnitOpacity;
+        const eased = easeInOut(progress);
+
+        unitEl.setAttribute('r', formatNumber(lerp(12.7, targetRadius, eased)));
+        unitEl.style.fill = selected ? C2_STYLE.teal : mixHex(C2_STYLE.teal, targetFill, eased);
+        unitEl.style.stroke = selected ? C2_STYLE.teal : mixHex(C2_STYLE.teal, targetStroke, eased);
+        unitEl.style.strokeWidth = formatNumber(lerp(2.8, targetStrokeWidth, eased));
+        unitEl.style.opacity = formatNumber(lerp(1, targetOpacity, eased));
+        unitEl.style.transform = 'none';
+        removeEmptyStyle(unitEl);
+      }
+
+      function renderC2Edge(edge, selected, progress) {
+        if (progress <= 0) {
+          clearC2EdgeStyles(edge);
+          return;
+        }
+
+        const targetStroke = selected ? C2_STYLE.teal : C2_STYLE.ghost;
+        const targetWidth = selected ? C2_STYLE.selectedEdgeWidth : C2_STYLE.ghostEdgeWidth;
+        const targetOpacity = selected ? 1 : C2_STYLE.ghostEdgeOpacity;
+        const eased = easeInOut(progress);
+
+        edge.style.stroke = selected ? C2_STYLE.teal : mixHex(C2_STYLE.teal, targetStroke, eased);
+        edge.style.strokeWidth = formatNumber(lerp(C2_STYLE.selectedEdgeWidth, targetWidth, eased));
+        edge.style.opacity = formatNumber(lerp(1, targetOpacity, eased));
+        removeEmptyStyle(edge);
+      }
+
+      function renderC2ScoreOverlay(svg, model, sweep) {
+        const overlay = ensureC2Overlay(svg, model);
+        const overlayOpacity = sweep.mode === 'settle' ? 1 - easeInOut(sweep.settle) : 1;
+        setOpacity(overlay, overlayOpacity);
+
+        model.nodes.units.forEach((unitNode) => {
+          const unitIndex = unitNode.index;
+          const group = overlay.querySelector(`[data-c2-score-unit="${unitIndex}"]`);
+          if (!group) return;
+
+          const isResolved = sweep.mode === 'settle' || (sweep.mode === 'sweep' && unitIndex < sweep.currentUnit);
+          const isCurrent = sweep.mode === 'sweep' && unitIndex === sweep.currentUnit;
+          if (!isResolved && !isCurrent) {
+            setOpacity(group, 0);
+            return;
+          }
+
+          const local = isResolved ? 1 : sweep.local;
+          const barProgress = easeOut(clamp(local / 0.58));
+          const markProgress = easeInOut(clamp((local - 0.58) / 0.20));
+          const selected = model.pruning.selectedUnits.includes(unitIndex);
+          const width = c2ScoreWidth(model.pruning.scores[unitIndex]) * barProgress;
+          const markX = Math.min(1160 - 12, C2_STYLE.barX + width + C2_STYLE.markPad);
+          const groupOpacity = isCurrent ? 1 : 0.68;
+
+          setOpacity(group, groupOpacity);
+          const fill = group.querySelector('[data-c2-score-fill]');
+          if (fill) fill.setAttribute('width', formatNumber(width));
+          const mark = group.querySelector('[data-c2-verdict]');
+          if (mark) {
+            mark.setAttribute('transform', `translate(${formatNumber(markX)} ${unitNode.y})`);
+            mark.setAttribute('stroke', selected ? C2_STYLE.teal : C2_STYLE.ghostMark);
+            setOpacity(mark, markProgress);
+            const check = mark.querySelector('[data-c2-check]');
+            const cross = mark.querySelector('[data-c2-cross]');
+            if (check) check.style.display = selected ? '' : 'none';
+            if (cross) cross.style.display = selected ? 'none' : '';
+          }
+        });
+      }
+
+      function ensureC2Overlay(svg, model) {
+        let overlay = svg.querySelector('#fig1-c2-overlay');
+        if (overlay) return overlay;
+
+        overlay = append(svg, svgEl('g', {
+          id: 'fig1-c2-overlay',
+          'aria-hidden': 'true',
+          opacity: 0
+        }));
+
+        model.nodes.units.forEach((unitNode) => {
+          const y = unitNode.y - C2_STYLE.barHeight / 2;
+          const group = append(overlay, svgEl('g', {
+            'data-c2-score-unit': unitNode.index,
+            opacity: 0
+          }));
+          append(group, svgEl('rect', {
+            x: C2_STYLE.barX,
+            y,
+            width: 0,
+            height: C2_STYLE.barHeight,
+            rx: 3,
+            fill: C2_STYLE.scoreFill,
+            stroke: C2_STYLE.scoreStroke,
+            'stroke-width': 1.3,
+            'data-c2-score-fill': 'true'
+          }));
+          const mark = append(group, svgEl('g', {
+            'data-c2-verdict': 'true',
+            transform: `translate(${C2_STYLE.barX} ${unitNode.y})`,
+            fill: 'none',
+            stroke: C2_STYLE.teal,
+            'stroke-width': 2.8,
+            'stroke-linecap': 'round',
+            'stroke-linejoin': 'round',
+            opacity: 0
+          }));
+          append(mark, svgEl('path', {
+            d: 'M -6 0 L -2 5 L 8 -7',
+            'data-c2-check': 'true'
+          }));
+          append(mark, svgEl('path', {
+            d: 'M -6 -6 L 6 6 M -6 6 L 6 -6',
+            'data-c2-cross': 'true'
+          }));
+        });
+
+        return overlay;
+      }
+
+      function c2ScoreWidth(score) {
+        return Math.min(C2_STYLE.barMaxWidth, Math.max(0, score) * C2_STYLE.barMaxWidth);
+      }
+
+      function removeC2Overlay(svg) {
+        const overlay = svg.querySelector('#fig1-c2-overlay');
+        if (overlay) overlay.remove();
+      }
+
+      function settleC2Circuit(svg, model) {
+        renderC2At(svg, model, C2_PHASE_BOUNDS.total);
+        removeC2Overlay(svg);
+        normalizeC2CircuitStyles(svg, model);
+        svg.classList.remove('c2-animating');
+        svg.removeAttribute('data-c2-phase');
+        svg.setAttribute('data-c2-state', 'pruned-circuit');
+      }
+
+      function resetC2Scene(svg) {
+        clearHighlight(svg);
+        clearC2GraphStyles(svg);
+        removeC2Overlay(svg);
+        svg.classList.remove('c2-animating');
+        svg.removeAttribute('data-c2-phase');
+        svg.removeAttribute('data-c2-state');
+      }
+
+      function clearC2GraphStyles(svg) {
+        svg.querySelectorAll('[data-node="unit"]').forEach((unit) => {
+          clearC2UnitStyles(unit);
+        });
+
+        svg.querySelectorAll('[data-edge="read"], [data-edge="write"]').forEach((edge) => {
+          clearC2EdgeStyles(edge);
+        });
+      }
+
+      function clearC2UnitStyles(unit) {
+        unit.setAttribute('r', '11');
+        unit.removeAttribute('fill');
+        unit.removeAttribute('stroke');
+        unit.removeAttribute('stroke-width');
+        unit.removeAttribute('opacity');
+        unit.style.removeProperty('--c2-unit-fill');
+        unit.style.removeProperty('--c2-unit-stroke');
+        unit.style.removeProperty('--c2-unit-stroke-width');
+        unit.style.removeProperty('fill');
+        unit.style.removeProperty('stroke');
+        unit.style.removeProperty('stroke-width');
+        unit.style.removeProperty('opacity');
+        unit.style.removeProperty('transform');
+        removeEmptyStyle(unit);
+      }
+
+      function clearC2EdgeStyles(edge) {
+        edge.removeAttribute('stroke');
+        edge.removeAttribute('stroke-width');
+        edge.removeAttribute('opacity');
+        edge.style.removeProperty('stroke');
+        edge.style.removeProperty('stroke-width');
+        edge.style.removeProperty('opacity');
+        removeEmptyStyle(edge);
+      }
+
+      function normalizeC2CircuitStyles(svg, model) {
+        const selectedUnits = model.pruning.selectedUnits;
+        model.nodes.units.forEach((unitNode) => {
+          const unitEl = svg.querySelector(`[data-node="unit"][data-unit="${unitNode.index}"]`);
+          if (!unitEl) return;
+          const selected = selectedUnits.includes(unitNode.index);
+          clearC2UnitStyles(unitEl);
+          unitEl.setAttribute('r', formatNumber(selected ? C2_STYLE.selectedUnitRadius : C2_STYLE.ghostUnitRadius));
+          unitEl.style.setProperty('--c2-unit-fill', selected ? C2_STYLE.teal : '#ffffff');
+          unitEl.style.setProperty('--c2-unit-stroke', selected ? C2_STYLE.teal : C2_STYLE.ghost);
+          unitEl.style.setProperty('--c2-unit-stroke-width', formatNumber(selected ? C2_STYLE.selectedUnitStroke : C2_STYLE.ghostUnitStroke));
+          unitEl.setAttribute('opacity', formatNumber(selected ? 1 : C2_STYLE.ghostUnitOpacity));
+        });
+
+        svg.querySelectorAll('[data-edge="read"], [data-edge="write"]').forEach((edge) => {
+          const unit = Number(edge.getAttribute('data-unit'));
+          const selected = selectedUnits.includes(unit);
+          clearC2EdgeStyles(edge);
+          edge.setAttribute('stroke', selected ? C2_STYLE.teal : C2_STYLE.ghost);
+          edge.setAttribute('stroke-width', formatNumber(selected ? C2_STYLE.selectedEdgeWidth : C2_STYLE.ghostEdgeWidth));
+          edge.setAttribute('opacity', formatNumber(selected ? 1 : C2_STYLE.ghostEdgeOpacity));
+        });
+      }
+
+      function phaseProgress(timeMs, name) {
+        const phase = C1_PHASE_BOUNDS[name];
+        return clamp((timeMs - phase.start) / phase.duration, 0, 1);
+      }
+
+      function c2PhaseProgress(timeMs, name) {
+        const phase = C2_PHASE_BOUNDS[name];
+        return clamp((timeMs - phase.start) / phase.duration, 0, 1);
+      }
+
+      function setOpacity(el, value) {
+        if (el) el.setAttribute('opacity', formatNumber(clamp(value, 0, 1)));
+      }
+
+      function setTransform(el, value) {
+        if (el) el.setAttribute('transform', value);
+      }
+
+      function setLine(line, x1, y1, x2, y2) {
+        line.setAttribute('x1', formatNumber(x1));
+        line.setAttribute('y1', formatNumber(y1));
+        line.setAttribute('x2', formatNumber(x2));
+        line.setAttribute('y2', formatNumber(y2));
+      }
+
+      function removeEmptyStyle(el) {
+        if (el.getAttribute('style') === '') el.removeAttribute('style');
+      }
+
+      function clamp(value, min = 0, max = 1) {
+        return Math.min(max, Math.max(min, value));
+      }
+
+      function lerp(start, end, progress) {
+        return start + (end - start) * progress;
+      }
+
+      function easeInOut(value) {
+        const t = clamp(value);
+        return t * t * (3 - 2 * t);
+      }
+
+      function easeOut(value) {
+        const t = clamp(value);
+        return 1 - Math.pow(1 - t, 3);
+      }
+
+      function lineDistance(x1, y1, x2, y2) {
+        return Math.hypot(x2 - x1, y2 - y1);
+      }
+
+      function mixHex(start, end, progress) {
+        const s = hexToRgb(start);
+        const e = hexToRgb(end);
+        const t = clamp(progress);
+        return `rgb(${Math.round(lerp(s.r, e.r, t))}, ${Math.round(lerp(s.g, e.g, t))}, ${Math.round(lerp(s.b, e.b, t))})`;
+      }
+
+      function hexToRgb(value) {
+        const hex = value.replace('#', '');
+        return {
+          r: parseInt(hex.slice(0, 2), 16),
+          g: parseInt(hex.slice(2, 4), 16),
+          b: parseInt(hex.slice(4, 6), 16)
+        };
+      }
+
+      function formatNumber(value) {
+        return Number(value.toFixed(3)).toString();
+      }
+
+      function wait(ms) {
+        return new Promise((resolve) => {
+          window.setTimeout(resolve, ms);
+        });
+      }
+
+      function requestFrame(callback) {
+        if (window.requestAnimationFrame) {
+          window.requestAnimationFrame(callback);
+        } else {
+          window.setTimeout(callback, 16);
+        }
+      }
+
+      function nextPaint() {
+        return new Promise((resolve) => {
+          requestFrame(() => {
+            requestFrame(resolve);
+          });
+        });
+      }
+
+      function isVisibleEnough(el, threshold) {
+        const rect = el.getBoundingClientRect();
+        const viewportWidth = window.innerWidth || document.documentElement.clientWidth;
+        const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+        const visibleWidth = Math.max(0, Math.min(rect.right, viewportWidth) - Math.max(rect.left, 0));
+        const visibleHeight = Math.max(0, Math.min(rect.bottom, viewportHeight) - Math.max(rect.top, 0));
+        const visibleArea = visibleWidth * visibleHeight;
+        const totalArea = rect.width * rect.height;
+        return totalArea > 0 && visibleArea / totalArea >= threshold;
+      }
+
+      function runHero() {
+        // Defensive: any failure here must NOT break the rest of the page (title sizing, TOC, etc.).
+        // The static SVG fallback in the markup stays visible if this throws.
+        try {
+          const svg = document.getElementById('hero-fig1');
+          if (!svg) return;
+          drawScene(svg, FIGURE_MODEL);
+          const c1Controller = createC1Controller(svg, FIGURE_MODEL);
+          window.heroFig1 = {
+            model: FIGURE_MODEL,
+            elements: elementIndex,
+            selectedUnits: SELECTED_UNITS.slice(),
+            highlightUnit: (unitIndex) => highlightUnit(svg, FIGURE_MODEL, unitIndex),
+            clearHighlight: () => clearHighlight(svg),
+            playFactorizeAnimation: c1Controller.playFactorizeAnimation,
+            playPruneAnimation: c1Controller.playPruneAnimation,
+            playFullSequence: c1Controller.playFullSequence,
+            c1Timeline: c1Controller.timeline,
+            c2Timeline: c1Controller.c2Timeline
+          };
+        } catch (err) {
+          try { console.error('SWD hero init failed (non-fatal):', err); } catch (e) {}
+        }
+      }
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', runHero, { once: true });
+      } else {
+        runHero();
+      }
+    })();
+  </script></div></div></figure> </div>

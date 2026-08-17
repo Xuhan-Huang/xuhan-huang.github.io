@@ -1,0 +1,11 @@
+<header class="site-header">
+  <div class="site-shell site-nav">
+    <a class="site-wordmark" href="{{ '/' | relative_url }}">Xuhan Huang</a>
+    <nav class="site-nav__links" aria-label="Primary navigation">
+      <a href="{{ '/' | relative_url }}"{% if page.nav_key == 'home' %} aria-current="page"{% endif %}>Home</a>
+      <a href="{{ '/research/' | relative_url }}"{% if page.nav_key == 'research' %} aria-current="page"{% endif %}>Research</a>
+      <a href="{{ '/teaching/' | relative_url }}"{% if page.nav_key == 'teaching' %} aria-current="page"{% endif %}>Teaching</a>
+      <a href="{{ '/cv/' | relative_url }}"{% if page.nav_key == 'cv' %} aria-current="page"{% endif %}>CV</a>
+    </nav>
+  </div>
+</header>

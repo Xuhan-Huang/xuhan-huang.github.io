@@ -1,12 +1,48 @@
 ---
-layout: archive
+layout: redesign
 title: "Teaching"
 permalink: /teaching/
-author_profile: true
+description: "Teaching and student seminars by Xuhan Huang at CUHK-Shenzhen."
+nav_key: teaching
+body_class: teaching-page
 ---
 
-{% include base_path %}
+<main id="main-content" class="page-shell">
+  <header class="page-hero">
+    <p class="page-kicker">Teaching</p>
+    <h1 class="page-title">Courses and student seminars.</h1>
+    <p class="page-lead">I have supported undergraduate mathematics courses and given student seminars on topics spanning mathematical analysis and reinforcement learning.</p>
+  </header>
 
-{% for post in site.teaching reversed %}
-  {% include archive-single.html %}
-{% endfor %}
+  <section class="teaching-list" aria-label="Teaching experience">
+    <article class="teaching-item" id="honours-ode">
+      <div class="teaching-item__term">Fall 2024</div>
+      <div>
+        <h2>Honours Ordinary Differential Equations</h2>
+        <p class="teaching-item__meta">Teaching Fellow · MAT2001 · CUHK-Shenzhen</p>
+        <p>Delivered a weekly tutorial on methods for solving ordinary differential equations and held individual office hours to help students work through challenging problems.</p>
+      </div>
+    </article>
+
+    <article class="teaching-item" id="honours-calculus">
+      <div class="teaching-item__term">Spring 2024</div>
+      <div>
+        <h2>Honours Calculus</h2>
+        <p class="teaching-item__meta">Teaching Fellow · MAT1012 · CUHK-Shenzhen</p>
+        <p>Led two-hour weekly tutorials covering calculus and introductory analysis, with an additional weekly office hour for individual support.</p>
+      </div>
+    </article>
+
+    <article class="teaching-item" id="student-seminars">
+      <div class="teaching-item__term">2023–2025</div>
+      <div>
+        <h2>Student Seminars</h2>
+        <p class="teaching-item__meta">Student seminar speaker · CUHK-Shenzhen</p>
+        <ul>
+          <li><strong>PPO and veRL (2025):</strong> derivation of proximal policy optimization and an introduction to the veRL training framework.</li>
+          <li><strong>Real Analysis (2023):</strong> continuity, limits, and differentiation in Euclidean space.</li>
+        </ul>
+      </div>
+    </article>
+  </section>
+</main>

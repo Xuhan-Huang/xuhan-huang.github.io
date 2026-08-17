@@ -1,0 +1,5 @@
+{% if include.compact and include.work.home_author_limit %}
+  {% for author in include.work.authors limit: include.work.home_author_limit %}<span{% if author.self %} class="author-self"{% endif %}>{{ author.name }}{% if author.equal %}<sup class="equal-mark" aria-label="equal contribution">*</sup>{% endif %}</span>{% if forloop.last %}, et al.{% else %}, {% endif %}{% endfor %}
+{% else %}
+  {% for author in include.work.authors %}<span{% if author.self %} class="author-self"{% endif %}>{{ author.name }}{% if author.equal %}<sup class="equal-mark" aria-label="equal contribution">*</sup>{% endif %}</span>{% unless forloop.last %}, {% endunless %}{% endfor %}
+{% endif %}

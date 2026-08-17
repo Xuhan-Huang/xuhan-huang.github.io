@@ -1,83 +1,97 @@
 ---
-layout: archive
+layout: redesign
 title: "CV"
 permalink: /cv/
-author_profile: true
+description: "Curriculum vitae and a brief academic overview for Xuhan Huang."
+nav_key: cv
+body_class: cv-page
 redirect_from:
   - /resume
 ---
 
-{% include base_path %}
+<main id="main-content" class="page-shell">
+  <header class="page-hero">
+    <p class="page-kicker">Curriculum Vitae</p>
+    <h1 class="page-title">A brief academic overview.</h1>
+    <p class="page-lead">My background spans mathematics, formal reasoning, and machine learning. The PDF contains the detailed record of publications, research experience, teaching, and activities.</p>
+    <div class="cv-intro-actions">
+      <a class="primary-link" href="{{ '/files/Xuhan_Huang_CV_20260815.pdf' | relative_url }}" target="_blank" rel="noopener noreferrer">View full CV (PDF)</a>
+      <a class="primary-link primary-link--internal" href="{{ '/research/' | relative_url }}">Publications &amp; Preprints</a>
+    </div>
+  </header>
 
-You can view my [full CV](../files/Xuhan_Huang_CV_20260506.pdf) for more details.
+  <section class="content-section" aria-labelledby="education-heading">
+    <div class="content-section__heading">
+      <h2 id="education-heading">Education</h2>
+    </div>
+    <div class="cv-list">
+      <article class="cv-item">
+        <div class="cv-item__date">Incoming</div>
+        <div>
+          <h3>MPhil in Computer Science</h3>
+          <p>The Chinese University of Hong Kong, Shenzhen</p>
+        </div>
+      </article>
+      <article class="cv-item">
+        <div class="cv-item__date">2022–2026</div>
+        <div>
+          <h3>Undergraduate studies in Applied Mathematics</h3>
+          <p>The Chinese University of Hong Kong, Shenzhen</p>
+        </div>
+      </article>
+    </div>
+  </section>
 
-## Education
+  <section class="content-section" aria-labelledby="experience-heading">
+    <div class="content-section__heading">
+      <h2 id="experience-heading">Research experience</h2>
+      <a class="content-section__note" href="{{ '/research/' | relative_url }}">View research page ↗</a>
+    </div>
+    <div class="cv-list">
+      <article class="cv-item">
+        <div class="cv-item__date">Mar 2026–Present</div>
+        <div>
+          <h3>Research Intern · IQuest Research</h3>
+          <p>Mechanistic analysis of large language models in Beijing. Mentored by Professor Jie Fu.</p>
+        </div>
+      </article>
+      <article class="cv-item">
+        <div class="cv-item__date">May 2025–Jan 2026</div>
+        <div>
+          <h3>Research Intern · Shanghai AI Laboratory</h3>
+          <p>Large language models for formal reasoning, including training and evaluation with verifier feedback. Mentored by Professor Jie Fu.</p>
+        </div>
+      </article>
+      <article class="cv-item">
+        <div class="cv-item__date">Dec 2023–Oct 2025</div>
+        <div>
+          <h3>Research Assistant · CUHK-Shenzhen</h3>
+          <p>Theoretical machine learning, mathematical modeling, and optimization modeling. Advised by Professors Benyou Wang and Zhongxiang Dai.</p>
+        </div>
+      </article>
+    </div>
+  </section>
 
-### The Chinese University of Hong Kong, Shenzhen
-
-*Fall 2022 - Present*
-- **Major:** Pure Mathematics
-- **CGPA:** 3.88 / 4.00
-- **Rank:** 5/219 in School of Science and Engineering, 4/77 in Mathematics
-
-### The Chinese University of Hong Kong
-
-*Spring 2025*
-- Visiting Student
-
----
-
-## Publications
-*(\* denotes equal contribution)*
-
-1.  **Re:Form—Reducing Human Priors in Scalable Formal Software Verification with RL in LLMs** \
-    Chuanhao Yan\*, Fengdi Che\*, **Xuhan Huang**\*, Xu Xu\*, Xin Li\*, Yizhi Li\*, Xingwei Qu\*, Jingzhe Shi, Chenghua Lin, Yaodong Yang, Binhang Yuan, Hang Zhao, Yu Qiao, Bowen Zhou, Jie Fu. \
-    *Transactions on Machine Learning Research (TMLR)*, 2026. [[paper](https://arxiv.org/abs/2507.16331)] [[code](https://github.com/Veri-Code/ReForm)]
-
-2.  **Federated Linear Dueling Bandits** \
-    **Xuhan Huang**, Yan Hu, Zhiyan Li, Zhiyong Wang, Benyou Wang, Zhongxiang Dai \
-    *AAAI Conference on Artificial Intelligence (AAAI)*, 2026. [[paper](https://arxiv.org/abs/2502.01085)]
-
-3.  **LLMs for Mathematical Modeling: Towards Bridging the Gap between Natural and Mathematical Languages** \
-    **Xuhan Huang**, Qingning Shen, Yan Hu, Anningzhe Gao, Benyou Wang \
-    *Findings of the Association for Computational Linguistics (NAACL)*, 2025. [[paper](https://aclanthology.org/2025.findings-naacl.146.pdf)] [[code](https://github.com/FreedomIntelligence/Mamo)]
-
-4.  **Differentiable Evolutionary Reinforcement Learning** \
-    Sitao Cheng\*, Tianle Li\*, **Xuhan Huang**\*, Xunjian Yin, Difan Zou. \
-    *ICLR 2026 Workshop on Recursive Self-Improvement*, 2026. [[paper](https://arxiv.org/abs/2512.13399)] [[code](https://github.com/sitaocheng/DERL)]
-
-5.  **VeriEquivBench: An Equivalence Score for Ground-Truth-Free Evaluation of Formally Verifiable Code** \
-    Lingfei Zeng\*, Fengdi Che\*, **Xuhan Huang**, Fei Ye, Xu Xu, Binhang Yuan, Jie Fu \
-    *International Conference on Learning Representations (ICLR)*, 2026. [[paper](https://arxiv.org/abs/2510.06296)] [[code](https://github.com/PunyGoood/VeriEquivBench)]
-
-6.  **CALM Before the STORM: Unlocking Native Reasoning for Optimization Modeling** \
-    Zhengyang Tang\*, Zihan Ye\*, Chenyu Huang\*, **Xuhan Huang**, Chengpeng Li, Sihang Li, Guanhua Chen, Ming Yan, Zizhuo Wang, Hongyuan Zha, Dayiheng Liu, Benyou Wang. \
-    *To Appear in the International Conference on Machine Learning (ICML)*, 2026. [[paper](https://arxiv.org/abs/2510.04204)]
-
-
----
-
-## Teaching Experience
-
-### Teaching Assistant for Honours Ordinary Differential Equations
-*CUHK-Shenzhen, School of Science and Engineering* | *Fall 2024*
-- Delivered one-hour weekly tutorials on solving ODEs and provided an additional hour of one-on-one student support.
-
-### Teaching Assistant for Honours Calculus
-*CUHK-Shenzhen, School of Science and Engineering* | *Spring 2024*
-- Led two-hour weekly tutorials covering topics in Calculus and Analysis and held a one-hour weekly session for individual student assistance.
-
----
-
-## Activities
-
-### Advanced Course in Modern Optimization
-*Summer 2024*
-- Studied modern optimization under **Professor Yurii Nesterov**, following his book, [*Lectures on Convex Optimization*](http://link.springer.com/book/10.1007/978-3-319-91578-4).
-
-**Student Seminar Speaker** *Summer 2023, Summer 2025*
-
-**Work:** Delivered technical lectures for undergraduate students on advanced topics:
-
-*   **Reinforcement Learning (2025):** Covered PPO derivation and the `veRL` training framework.
-*   **Real Analysis (2023):** Covered continuity, limits, and differentiation in Euclidean space \\(\mathbb{R}^N\\).
+  <section class="content-section" aria-labelledby="teaching-summary-heading">
+    <div class="content-section__heading">
+      <h2 id="teaching-summary-heading">Teaching</h2>
+      <a class="content-section__note" href="{{ '/teaching/' | relative_url }}">View teaching page ↗</a>
+    </div>
+    <div class="cv-list">
+      <article class="cv-item">
+        <div class="cv-item__date">2024</div>
+        <div>
+          <h3>Undergraduate Teaching Fellow</h3>
+          <p>Honours Ordinary Differential Equations and Honours Calculus at CUHK-Shenzhen.</p>
+        </div>
+      </article>
+      <article class="cv-item">
+        <div class="cv-item__date">2023–2025</div>
+        <div>
+          <h3>Student Seminar Speaker</h3>
+          <p>Talks on PPO and veRL, and on real analysis.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+</main>
