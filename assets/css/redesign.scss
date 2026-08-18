@@ -363,6 +363,10 @@ body.redesign-site {
   font-weight: 675;
 }
 
+.contact-row > a {
+  justify-self: start;
+}
+
 .contact-row__links {
   display: flex;
   flex-wrap: wrap;
