@@ -11,7 +11,7 @@ body_class: research-page
   <header class="page-hero">
     <p class="page-kicker">Research</p>
     <h1 class="page-title">Understanding model behavior and making reasoning verifiable.</h1>
-    <p class="page-lead">My work is organized around a broad goal in AI safety: developing methods that make model behavior more transparent, evaluable, and reliable. I currently approach this goal through two related directions.</p>
+    <p class="page-lead">As AI systems become more capable, using them safely and effectively increasingly depends on our ability to understand and verify their behavior. I study this challenge through two complementary directions: understanding how model behavior arises from internal mechanisms, and exploring verifiable reasoning methods to reduce the cost of obtaining reliable feedback.</p>
   </header>
 
   <section class="focus-grid" aria-label="Current research focuses">
@@ -32,7 +32,7 @@ body_class: research-page
     <article class="focus-item">
       <span class="focus-item__number">02</span>
       <h2>Verifiable Reasoning for AI Safety</h2>
-      <p>I study how verifiable reasoning can support AI safety. I focus on tasks where model-generated solutions can be expressed in formal languages and checked automatically against explicit rules or specifications, and explore how this feedback can support scalable training and reliable evaluation.</p>
+      <p>I study verifiable reasoning for AI safety, using formal languages and automated verifiers to reduce the cost of obtaining reliable feedback on model-generated solutions. I explore how this feedback can support scalable training and evaluation for tasks with explicit, checkable specifications.</p>
       <figure class="focus-visual focus-visual--reform">
         <div class="focus-visual__frame">
           <img src="{{ '/assets/images/research/reform-rl.png' | relative_url }}" alt="Re:Form reinforcement-learning pipeline with specification-subset and verification rewards" loading="lazy">
